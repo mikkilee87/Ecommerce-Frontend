@@ -3,6 +3,31 @@
     font-family: 'Sour Gummy', sans-serif;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7bfa3;
+    background-color: #f7d8c2;
+}
+
+li {
+    display: inline;    
+}
+
+li a {
+    display: inline;
+    color: rgb(26, 25, 25);
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #1182ec;
+}
+
 .content {
     background-color: white;
     padding: 15px;
@@ -69,4 +94,178 @@ body {
 #copyright {
     text-align: center;
     font-size: 10px;
+}
+
+#contact-form {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+}
+
+#contact-form .site-container {
+    width: 100%;
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 5rem);
+    position: relative;
+}
+
+#contact-form .contact-us-content {
+     text-align: left;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+}
+
+.contact-title {
+    font-family: 'Sour Gummy', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(243, 82, 41);
+    display: block;
+}
+
+#contact-form .contact-form {
+    width: 100%;
+        max-width: 40.625rem;
+        padding: clamp(2rem, 5.18vw, 3rem) clamp(1rem, 5vw, 3.75rem);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        flex: none;
+        gap: 0.75rem;
+}
+
+#contact-form .contact-form .contact-title {
+    margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+}
+
+#contact-form .contact-label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+#contact-form .contact-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0;
+    background-color: #fff;
+    border: none;   
+    box-sizing: border-box;
+}
+
+#contact-form .contact-first-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5;
+    padding: 5px 5px 5px 10px;
+    background-color: #fff;
+    border: none;   
+    box-sizing: border-box;
+}
+
+#contact-form .contact-last-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 5;
+    padding: 5px 5px 5px 10px;
+    background-color: #fff;
+    border: none;   
+    box-sizing: border-box;
+}
+
+#contact-form .contact-email-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5;
+    padding: 5px 5px 5px 10px;
+    background-color: #fff;
+    border: none;   
+    box-sizing: border-box;
+}
+
+#contact-form .contact-subject-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5;
+    padding: 5px 5px 5px 10px;
+    background-color: #fff;
+    border: none;   
+    box-sizing: border-box;
+}
+
+#contact-form .cs-textarea {
+        min-height: 5.5rem;
+        padding-top: 1.5rem;
+        margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+        font-family: inherit;
+}
+
+#contact-form .contact-button-solid {
+    background-color: rgba(6, 129, 245, 0.815);
+    color: white; 
+    text-align: center;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#contact-form .contact-submit {
+    width: 100%;
+    min-width: 17.6875rem;
+    background-color: rgba(6, 129, 245, 0.815);
+    color: white; 
+    text-align: center;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#contact-form .contact-submit:hover {
+    cursor: pointer;
+    background-color: rgb(3, 60, 184);
+}
+
+#contact-form .contact-social{
+    margin-top: clamp(2rem, 6vw, 5rem);
+    display: inline-flex;
+    justify-content: flex-start;
+    gap: 0.75em;
+    text-align: center;
+}
+
+#contact-form .contact-social-link{
+    width: clamp(2rem, 4vw, 3.25rem);
+    height: clamp(2rem, 4vw, 3.25rem);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.contact-social-link:hover{
+    background-color: var(--primary);
+    transform: translateY(-0.1875rem);
+}
+
+.contact-social-img{
+   height: clamp (0.875rem, 2vw, 1.5rem);
+   display: block;
 }
