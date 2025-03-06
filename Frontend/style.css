@@ -269,3 +269,42 @@ body {
    height: clamp (0.875rem, 2vw, 1.5rem);
    display: block;
 }
+
+.gallery-container {
+    width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+}
+
+.gallery-content {
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1.5rem;
+}
+
+#gallery-title {
+    font-family: 'Sour Gummy', sans-serif;
+    text-align: center;
+    color: rgb(243, 82, 41);
+}
+
+.gallery-gallery {
+    width: 100%;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(19.0625rem, 1fr));
+        gap: clamp(1rem, 1.5vw, 1.25rem);
+        position: relative;
+}
+
+.gallery-image {}
