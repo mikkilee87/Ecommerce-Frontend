@@ -1,0 +1,396 @@
+#painted-shoes{
+    text-align: center;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7bfa3;
+    background-color: #f7d8c2;
+}
+
+li {
+    display: inline;    
+}
+
+li a {
+    display: inline;
+    color: rgb(26, 25, 25);
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #1182ec;
+}
+
+.content {
+    background-color: white;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+.sesame-street{
+    height: 400px;
+    width: 400px;
+}
+
+body {
+    background-color: #FFF0E5;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+#description {
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+.description-of-work {
+    text-align: left;
+}
+
+.add-to-cart {
+    text-align: center;
+}
+
+#add-to-cart-button {
+    background-color: rgba(6, 129, 245, 0.815);
+    color: white; 
+    text-align: center;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#add-to-cart-button:hover {
+    background-color: rgb(3, 60, 184);
+    transition: 0.7s;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 30px;
+    min-width: 400px;
+    text-align: center;
+}
+
+.styled-table th, td {
+    padding: 10px;
+}
+
+.styled-header {
+    background-color: rgb(231, 243, 196);
+    text-align: center;
+}
+
+#copyright {
+    text-align: center;
+    font-size: 10px;
+}
+
+.contact-us-body {
+    background-image: linear-gradient(40deg,
+    hsl(240deg 56% 48%) 0%,
+    hsl(250deg 48% 49%) 10%,
+    hsl(260deg 40% 49%) 24%,
+    hsl(271deg 34% 50%) 42%,
+    hsl(285deg 28% 50%) 57%,
+    hsl(305deg 24% 50%) 68%,
+    hsl(325deg 29% 54%) 75%,
+    hsl(340deg 34% 58%) 81%,
+    hsl(354deg 40% 62%) 85%,
+    hsl(358deg 39% 63%) 89%,
+    hsl(353deg 31% 62%) 92%,
+    hsl(345deg 22% 61%) 94%,
+    hsl(330deg 14% 60%) 96%,
+    hsl(284deg 9% 60%) 97%,
+    hsl(232deg 12% 62%) 98%,
+    hsl(212deg 22% 61%) 99%,
+    hsl(204deg 32% 60%) 100%,
+    hsl(200deg 41% 58%) 100%);
+background-repeat: no-repeat;
+height: 99vh;
+overflow-y: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Quicksand', sans-serif;
+}
+
+.formBox {
+    padding: 15px;
+    text-align: center;
+    min-height: 50vh;
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f885;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+#contact-title {
+    margin-bottom: -10px;
+    font-family: 'Sour Gummy', sans-serif;
+    color: rgb(243, 82, 41);
+}
+.contact-paragraph {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+form {
+    padding: 10px;
+}
+
+form>div {
+    padding: 10px;
+    position: relative;
+    font-size: 1.3em;
+}
+
+form>div i {
+    position: absolute;
+    top: 22px;
+    margin-left: 10px;
+    opacity: 0.3;
+}
+
+.contact-label {
+    font-weight: bold;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+form>div input {
+    height: 2em;
+    width: 70vw;
+    padding-left: 40px;
+    font-size: 1em;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #b5adad;
+    background-color: #ffffff;
+}
+
+div>input:focus {
+    border: 1px solid #6f6a6a;
+}
+
+form>div:hover>i {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+textarea {
+    border: none;
+    width: 70vw;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 1em;
+}
+
+button {
+    width: 50%;
+    height: 5vh;
+    color: #ffffff;
+    background-color: rgba(6, 129, 245, 0.815);;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-family: 'Sour Gummy', sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(3, 60, 184);
+}
+
+@media screen and (min-width:900px) {
+    form>div input {
+        width: 50vw;
+    }
+
+    textarea {
+        width: 50vw;
+    }
+}
+
+.contact-social {}
+
+.cart-body {
+    background: #ddd;
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.cart-title {
+    margin-bottom: 5vh;
+    font-Family: 'Sour Gummy', sans-serif;
+}
+
+.card {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+
+@media(max-width:767px){
+    .card{
+        margin: 3vh auto;
+    }
+}
+
+.cart{
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+@media(max-width:767px){
+    .cart{
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+
+.summary{
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+@media(max-width:767px){
+    .summary{
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+    }
+}
+
+.summary .col-2{
+    padding: 0;
+}
+
+.summary .col-10
+{
+    padding: 0;
+}
+
+.row{
+    margin: 0;
+}
+
+.title b {
+    font-size: 1.5rem;
+}
+.main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+.col-2, .col {
+    padding: 0 1vh;
+}
+
+a {
+    padding: 0 1vh;
+}
+
+.close {
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+
+img {
+    width: 3.5rem;
+}
+
+.back-to-shop {
+    margin-top: 4.5rem;
+}
+
+h5 {
+    margin-top: 4vh;
+}
+
+hr {
+    margin-top: 1.25rem;
+}
+
+form {
+    padding: 2vh 0;
+}
+
+select {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+.btn {
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0;
+}
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    transition: none; 
+}
+
+.btn:hover {
+    color: white;
+}
+
+a {
+    color: black; 
+}
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+ #code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+}

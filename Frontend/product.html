@@ -2,61 +2,196 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href='./style.css' rel='stylesheet'>
-        <title>ArtbyKurisu Etsy Page</title>
+        <title id="title-name">ArtbyKurisu Etsy Page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h1>Painted Shoes</h1>
-            <img src="https://live.staticflickr.com/2228/1794290337_406ad932c5_h.jpg" alt="Painted shoes" height="400" width="400">
-        </header>
-            <section>
-                <h2 id="Description">Description</h2>
-                <p>
+        <section>
+            <h1 id="painted-shoes">Custom Painted Shoes</h1>
+            <nav class="top-navigation">
+                <ul>
+                    <li><a href="product.html">Home</a></li>
+                    <li><a href="Customizationpage.html">Customization</a></li>
+                    <li><a href="shoppingcart.html">Shopping Cart</a></li>               
+                    <li><a href="contactuspage.html">Contact Us</a></li>   
+                </ul>
+            </nav>
+        </section>
+        <div class="content">
+            <main>
+                <section>
+                        <img src="Images/sesame-street.png" alt="sesame-street" class="sesame-street">
+                </section>
+        <section>
+                <h2 id="description">Description</h2>
+                <p class="description-of-work">
                     These shoes are made completely to order! 
-                    Please feel free to message with any questions about a particular design you'd be interested in. 
+                    Please feel free to message with any questions about a particular design you're interested in. 
                     We can work together to come up with artwork ideas that you love!
-                    PLEASE ENSURE you are choosing the correct size - due to the custom nature of these shoes;
-                    I am unable to offer refunds if the sizing is incorrect.
+                    <strong>PLEASE ENSURE you are choosing the correct size</strong> - due to the custom nature of these shoes;
+                    I am unable to offer refunds if the sizing is incorrect. Please contact me before ordering so I can confirm your ideas with you. 
+                    <strong><em>*All designs will be original art. Inspiration pictures are welcome but I will not copy anyone's design. 
+                    Thank you for your understanding!</em></strong> For your peace of mind, 
+                    we will send photos of the finished product before dispatching to make sure you are 100% happy.
                 </p>
-            </section>
-            <form>
+        </section>
+            <form class="add-to-cart">
                 <button id="add-to-cart-button">Add to cart</button>
             </form>
-            <section>
-                <table>
+            <section class="shoe-invoicing-table">
+                <table class="styled-table">
                     <thead>
-                    <tr>
-                        <th>Shoe Type</th>
-                        <th>Shoe Size</th>
-                        <th>Number of Items to Ship</th>
-                        <th>Next Action</th>
-                    </tr>
+                        <tr class="styled-header">
+                            <th>Shoe Type</th>
+                            <th>Shoe Size</th>
+                            <th>Quantity</th>
+                            <th>Shoe Color</th>
+                            <th>Show Width</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Vans</td>
-                            <td>8.5</td>
-                            <td>3</td>
-                            <td>Package Items</td>
+                            <td>Vans Slip Ons</td>
+                            <td><select name="shoe-size" id="shoe-size">
+                                <option value="5">5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                                <option value="9.5">9.5</option>
+                                <option value="29">10</option>
+                                <option value="10.5">10.5</option>
+                              </select>
+                            </td>
+                            <td><select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </td>
+                            <td><select name="shoe-color" id="shoe-color">
+                                <option value="white">white</option>
+                                <option value="black">black</option>
+                            </td>
+                            <td><select name="shoe-width" id="shoe-width">
+                                <option value="narrow">narrow</option>
+                                <option value="wide">wide</option>
+                                <option value="x-wide">x-wide</option>
+                            </td>
                         </tr>
                         <tr>
                             <td>Converse High Tops</td>
-                            <td>6</td>
-                            <td>2</td>
-                            <td>Send Invoice</td>
+                            <td><select name="shoe-size" id="shoe-size">
+                                <option value="5">5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                                <option value="9.5">9.5</option>
+                                <option value="29">10</option>
+                                <option value="10.5">10.5</option>
+                              </select>
+                            </td>
+                            <td><select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </td>
+                            <td><select name="shoe-color" id="shoe-color">
+                                <option value="white">white</option>
+                                <option value="black">black</option>
+                            </td>
+                            <td><select name="shoe-width" id="shoe-width">
+                                <option value="narrow">narrow</option>
+                                <option value="wide">wide</option>
+                                <option value="x-wide">x-wide</option>
+                            </td>
                         </tr>
                         <tr>
                             <td>Air Force 1</td>
-                            <td>9.5</td>
-                            <td>2</td>
-                            <td>Package Items</td>
+                            <td><select name="shoe-size" id="shoe-size">
+                                <option value="5">5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                                <option value="9.5">9.5</option>
+                                <option value="29">10</option>
+                                <option value="10.5">10.5</option>
+                              </select>
+                            </td>
+                            <td><select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </td>
+                            <td><select name="shoe-color" id="shoe-color">
+                                <option value="white">white</option>
+                                <option value="black">black</option>
+                            </td>
+                            <td><select name="shoe-width" id="shoe-width">
+                                <option value="narrow">narrow</option>
+                                <option value="wide">wide</option>
+                                <option value="x-wide">x-wide</option>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TOMS slip ons</td>
+                            <td><select name="shoe-size" id="shoe-size">
+                                <option value="5">5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                                <option value="9.5">9.5</option>
+                                <option value="29">10</option>
+                                <option value="10.5">10.5</option>
+                              </select>
+                            </td>
+                            <td><select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </td>
+                            <td><select name="shoe-color" id="shoe-color">
+                                <option value="white">white</option>
+                                <option value="black">black</option>
+                            </td>
+                            <td><select name="shoe-width" id="shoe-width">
+                                <option value="narrow">narrow</option>
+                                <option value="wide">wide</option>
+                                <option value="x-wide">x-wide</option>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-            </section>
+                </section>
+            </main>
+        </div>
             <footer>
-                <p>&copy;2025 ArtbyKurisu. All rights reserved</p>
+                <p id="copyright">&copy;2025 ArtbyKurisu. All rights reserved</p>
             </footer>
     </body>
 </html>
