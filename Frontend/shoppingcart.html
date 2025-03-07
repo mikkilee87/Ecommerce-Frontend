@@ -9,27 +9,83 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <header>
-            <div class="container nav-container">
-                <nav class="top-navigation">
-                    <ul>
-                        <li><a href="product.html">Home</a></li>
-                        <li><a href="Customizationpage.html">Customization</a></li>                                   
-                        <li><a href="contactpage.html">Contact</a></li>
-                        <li class="cart-icon">
-                                <a href="shoppingcart.html">Cart</a> 
-                        <span class="cart-count"></span>
-                        </li>   
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <section class="page-header">
+    <body class="cart-body">
+        <section class="cart-header">
             <div class="container">
-                <h1 class="page-title">Shopping Cart</h1>
+                <h1 class="cart-title">Shopping Cart</h1>
             </div>
         </section>
+        <div class="card">
+            <div class="row">
+                <div class="col-md-8 cart">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col align-self-center text-right text-muted">3 items</div>
+                        </div>
+                    </div>    
+                    <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-product" src="Images/how-to-train-your-dragon.jpg" width="320"></div>
+                            <div class="col">
+                                <div class="row text-muted">Blue Galaxy</div>
+                                <div class="row">Classic Vans</div>
+                            </div>
+                            <div class="col">
+                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                            </div>
+                            <div class="col">$145.99<span class="close">&#10005;</span></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-product" src="Images/sesame-street.png" width="320"></div>
+                            <div class="col">
+                                <div class="row text-muted">Sesame Street with Name</div>
+                                <div class="row">Van Slip Ons</div>
+                            </div>
+                            <div class="col">
+                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                            </div>
+                            <div class="col">$100<span class="close">&#10005;</span></div>
+                        </div>
+                    </div>
+                    <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-product" src="Images/purple-galaxy-shoes.jpg" width="320"></div>
+                            <div class="col">
+                                <div class="row text-muted">Purple Galaxy Shoes</div>
+                                <div class="row">Van Slip Ons</div>
+                            </div>
+                            <div class="col">
+                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                            </div>
+                            <div class="col">$145.99<span class="close">&#10005;</span></div>
+                        </div>
+                    </div>
+                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                </div>
+                <div class="col-md-4 summary">
+                    <div><h5><b>Summary</b></h5></div>
+                    <hr>
+                    <div class="row">
+                        <div class="col" style="padding-left:0;">ITEMS 3</div>
+                        <div class="col text-right">$391.98</div>
+                    </div>
+                    <form>
+                        <p>SHIPPING</p>
+                        <select><option class="text-muted">Standard-Delivery- $5.00</option></select>
+                        <p>GIVE CODE</p>
+                        <input id="code" placeholder="Enter your code">
+                    </form>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">TOTAL PRICE</div>
+                        <div class="col text-right">$396.98</div>
+                    </div>
+                    <button class="btn">CHECKOUT</button>
+                </div>
+            </div>
+            
+        </div>
         <footer>
             <p id="copyright">&copy;2025 ArtbyKurisu. All rights reserved</p>
         </footer>
