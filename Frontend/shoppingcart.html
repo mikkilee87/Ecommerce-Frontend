@@ -2,93 +2,104 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shopping Cart - ArtbyKurisu Custom Painted Shoes</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Shopping Cart</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+         <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
-    <body class="cart-body">
-        <section class="cart-header">
-            <div class="container">
-                <h1 class="cart-title">Shopping Cart</h1>
+    <body>
+        <header>
+            <a href="#" class="logo">Shopping Cart</a>
+            <div id="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-item-count"></span>
             </div>
-        </section>
-        <div class="card">
-            <div class="row">
-                <div class="col-md-8 cart">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col align-self-center text-right text-muted">3 items</div>
-                        </div>
-                    </div>    
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-product" src="Images/how-to-train-your-dragon.jpg" alt="how-to-train-your-dragon-shoes" width="320"></div>
-                            <div class="col">
-                                <div class="row text-muted">Blue Galaxy</div>
-                                <div class="row">Classic Vans</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">$145.99<span class="close">&#10005;</span></div>
+        </header>
+
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <div class="cart-content">
+                <div class="cart-box">
+                    <img src="Images/sesame-street.png" class="cart-img">
+                    <div class="cart-detai">
+                        <h2 class="cart-product-title">Sesame Street Van Slip Ons</h2>
+                        <span class="cart-price">$100</span>
+                        <div class="cart-quantity">
+                            <button id="decrement">-</button>
+                            <span class="number">1</span>
+                            <button id="increment">+</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-product" src="Images/sesame-street.png" alt="sesame-street-painted-shoes" width="320"></div>
-                            <div class="col">
-                                <div class="row text-muted">Sesame Street with Name</div>
-                                <div class="row">Van Slip Ons</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">$100<span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-product" src="Images/purple-galaxy-shoes.jpg" alt="purple-galaxy-painted-shoes" width="320"></div>
-                            <div class="col">
-                                <div class="row text-muted">Purple Galaxy Shoes</div>
-                                <div class="row">Van Slip Ons</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">$145.99<span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                    <i class="ri-delete-bin-line cart-remove"></i>
                 </div>
-                <div class="col-md-4 summary">
-                    <div><h5><b>Summary</b></h5></div>
-                    <hr>
-                    <div class="row">
-                        <div class="col">ITEMS 3</div>
-                        <div class="col text-right">$391.98</div>
+            </div>
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$0</div>
+            </div>
+            <button class="btn-buy">Buy Now</button>
+            <i class="ri-close-line" id="cart-close"></i>
+        </div>
+
+        <section class="shop">
+            <h1 class="section-title">Shop Products</h1>
+            <div class="product-content">
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="Images/blue-galaxy-shoes.jpg" alt="blue-galaxy-shoes">
                     </div>
-                    <form>
-                        <p>SHIPPING</p>
-                        <select><option class="text-muted">Standard-Delivery- $5.00</option></select>
-                        <p>GIVE CODE</p>
-                        <input id="code" placeholder="Enter your code">
-                    </form>
-                    <div class="row">
-                        <div class="col">TOTAL PRICE</div>
-                        <div class="col text-right">$396.98</div>
+                    <h2 class="product-title">Blue Galaxy Van Slip Ons</h2>
+                    <div class="price-and-cart">
+                    <span class="price">$145.99</span>
+                    <i class="ri-shopping-cart-2-line add-cart"></i>
                     </div>
-                    <button class="checkout-button">CHECKOUT</button>
                 </div>
             </div>
             
-        </div>
-        <footer>
-            <p id="copyright">&copy;2025 ArtbyKurisu. All rights reserved</p>
-        </footer>
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="Images/coco-melon-shoes.jpg" alt="coco-melon-shoes">
+                    </div>
+                    <h2 class="product-title">Coco Melon Slip Ons</h2>
+                    <div class="price-and-cart">
+                    <span class="price">$100</span>
+                    <i class="ri-shopping-cart-2-line add-cart"></i>
+                    </div>
+                </div>
+
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="Images/how-to-train-your-dragon.jpg" alt="how-to-train-your-dragon">
+                    </div>
+                    <h2 class="product-title">HTTYD Classic Vans</h2>
+                    <div class="price-and-cart">
+                    <span class="price">$145.99</span>
+                    <i class="ri-shopping-cart-2-line add-cart"></i>
+                    </div>
+                </div>
+
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="Images/purple-galaxy-shoes.jpg" alt="purple-galaxy-shoes">
+                    </div>
+                    <h2 class="product-title">Purple Galaxy Van Slip Ons</h2>
+                    <div class="price-and-cart">
+                    <span class="price">$145.99</span>
+                    <i class="ri-shopping-cart-2-line add-cart"></i>
+                    </div>
+                </div>
+
+                <div class="product-box">
+                    <div class="img-box">
+                        <img src="Images/sesame-street.png" alt="sesame-street">
+                    </div>
+                    <h2 class="product-title">Custom Name Sesame Street Slip Ons</h2>
+                    <div class="price-and-cart">
+                    <span class="price">$100</span>
+                    <i class="ri-shopping-cart-2-line add-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
