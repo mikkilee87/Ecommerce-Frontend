@@ -202,7 +202,7 @@ textarea {
     width: 50%;
     height: 5vh;
     color: #ffffff;
-    background-color: rgba(6, 129, 245, 0.815);;
+    background-color: rgba(6, 129, 245, 0.815);
     outline: none;
     border: none;
     border-radius: 10px;
@@ -345,7 +345,7 @@ header {
 .cart {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 360px;
     height: 100%;
     background-color: #fff;
@@ -353,6 +353,11 @@ header {
     padding: 65px 20px 40px;
     z-index: 100;
     overflow: auto;
+    transition: 0.5s;
+}
+
+.cart.active {
+    right: 0;
 }
 
 .cart-title {
@@ -421,4 +426,38 @@ header {
 .cart-remove {
    font-size: 25px;
    cursor: pointer; 
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.total-price {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.btn-buy {
+    display: block;
+    padding: 10px 30px;
+    background-color: rgba(6, 129, 245, 0.815);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+#cart-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 35px;
+    cursor: pointer;
 }
