@@ -40,7 +40,7 @@ li a:hover {
     width: 400px;
 }
 
-body {
+.home-body {
     background-color: #FFF0E5;
     margin: 0;
     padding: 0;
@@ -96,6 +96,54 @@ body {
     font-size: 10px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-body {
+    background-color: #FFF0E5;
+    min-height: 100vh;
+}
+
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    z-index: 100;
+}
+
+.custom-navbar a {
+    position: relative;
+    font-size: 18px;
+    color:#333;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.custom-navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.custom-navbar a:hover::before {
+    width: 100%;
+}
+
 .contact-us-body {
     background-image: linear-gradient(40deg,
     hsl(240deg 56% 48%) 0%,
@@ -138,7 +186,7 @@ font-family: 'Quicksand', sans-serif;
 }
 
 #contact-title {
-    margin-bottom: -10px;
+    margin-bottom: 10px;
     font-family: 'Sour Gummy', sans-serif;
     color: rgb(243, 82, 41);
 }
@@ -200,7 +248,7 @@ textarea {
 
 #btn-send-message {
     width: 50%;
-    height: 5vh;
+    height: 5;
     color: #ffffff;
     background-color: rgba(6, 129, 245, 0.815);
     outline: none;
@@ -237,7 +285,7 @@ body {
    color: #333; 
 }
 
-header {
+.cart-header {
     position: fixed;
     top: 0;
     left: 0;
