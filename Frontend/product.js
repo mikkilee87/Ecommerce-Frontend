@@ -47,6 +47,8 @@ const addToCart = productBox => {
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
         cartBox.remove();
 
+        updateCartCount (-1);
+
         updateTotalPrice();
     });
 
@@ -62,13 +64,15 @@ const addToCart = productBox => {
             }
         } else if (event.target.id === "increment") {
             quantity++;
-            decrementButton.computedStyleMap.color = "#333";
+            decrementButton.style.color = "#333";
         }
 
         numberElement.textContent = quantity;
 
         updateTotalPrice();
     });
+
+    updateCartCount (1);
 
     updateTotalPrice();
 };
@@ -92,10 +96,28 @@ const updateCartCount = change => {
     const cartItemCountBadge = document.querySelector(".cart-item-count");
     cartItemCount += change;
     if (cartItemCount > 0) {
-        cartItemCountBadge.computedStyleMap.visibility = "visible";
+        cartItemCountBadge.style.visibility = "visible";
         cartItemCountBadge.textContent = cartItemCount;
     } else {
-        cartItemCountBadge.computedStyleMap.visibility = "hidden";
+        cartItemCountBadge.style.visibility = "hidden";
         cartItemCountBadge.textContent = "";
     }
 };
+
+const buyNowButton = document.querySelector (".btn-buy");
+buyNowButton.addEventListener("click", () => {
+    const cartBoxes = cartContent.querySelectorAll(".cart-box");
+    if (cartBoxes.length === 0) {
+        alert("Your cart is empty. Please add items to your cart before buying.");
+        return;
+    }
+
+    cartBoxes.forEach(cartBox => cartBox.remove());
+
+    cartItemCount = 0;
+    updateCartCount(0);
+
+    updateTotalPrice();
+
+    alert("Thank you for your purchase!")
+});
