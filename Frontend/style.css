@@ -8,8 +8,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #e7bfa3;
-    background-color: #f7d8c2;
+   
 }
 
 li {
@@ -40,7 +39,7 @@ li a:hover {
     width: 400px;
 }
 
-.home-body {
+body {
     background-color: #FFF0E5;
     margin: 0;
     padding: 0;
@@ -94,54 +93,6 @@ li a:hover {
 #copyright {
     text-align: center;
     font-size: 10px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.custom-body {
-    background-color: #FFF0E5;
-    min-height: 100vh;
-}
-
-.custom-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
-    z-index: 100;
-}
-
-.custom-navbar a {
-    position: relative;
-    font-size: 18px;
-    color:#333;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-}
-
-.custom-navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #333;
-    transition: 0.3s;
-}
-
-.custom-navbar a:hover::before {
-    width: 100%;
 }
 
 .contact-us-body {
@@ -354,7 +305,7 @@ body {
 } 
 
 .img-box img {
-    width: 550px;
+    width: 100%;
     transition: 0.5s;
 }
 
@@ -516,4 +467,54 @@ body {
     .cart {
         width: 100%;
     }
+}
+
+/* creating custom css code to delelte later */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-body {
+    background-color: #FFF0E5;
+    min-height: 100vh;
+}
+
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+}
+
+.custom-navbar a {
+    position: relative;
+    font-size: 18px;
+    color:#333;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.custom-navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.custom-navbar a:hover::before {
+    width: 100%;
 }

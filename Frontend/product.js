@@ -56,11 +56,12 @@ const addToCart = productBox => {
         const numberElement = cartBox.querySelector(".number");
         const decrementButton = cartBox.querySelector("#decrement");
         let quantity = numberElement.textContent;
+        quantity = parseInt(quantity);
 
         if (event.target.id === "decrement" && quantity > 1) {
             quantity--;
             if (quantity === 1) {
-                decrementButton.computedStyleMp.color = "#999";
+                decrementButton.style.color = "#999";
             }
         } else if (event.target.id === "increment") {
             quantity++;

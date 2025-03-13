@@ -10,16 +10,148 @@
         <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
 
-    <body class="custom-body">
+    <body>
+
         <header class="custom-header">
             <nav class="custom-navbar">
                 <a href="product.html">Home</a>
-                <a href="#">About</a>
+                <a href="about.html">About</a>
                 <a href="Customizationpage.html">Custom</a>
                 <a href="shoppingcart.html">Cart</a>
                 <a href="contactuspage.html">Contact</a>
             </nav>
         </header>
 
+        <main>
+            <section id="shoe-preview">
+                <h2>Your Custom Shoe Preview</h2>
+                <div>
+                    <img src="" alt="Shoe Preview">
+                </div>
+            </section>
+    
+            <section id="customization-options">
+                <h2>Customization Options</h2>
+                
+                <form id="customization-form">
+                    <fieldset>
+                        <legend>1. Choose Your Shoe</legend>
+                        <select name="shoe-type">
+                            <option value="classic-vans">Classic Vans</option>
+                            <option value="vans-slip-ons">Vans Slip Ons</option>
+                            <option value="converse-high-top">Converse High Tops</option>
+                            <option value="toms-slip-on">TOMS Slip-ons</option>
+                        </select>
+                        
+                        <p>Size:</p>
+                        <select name="shoe-size">
+                            <option value="5">US 5</option>
+                            <option value="5.5">US 5.5</option>
+                            <option value="6">US 6</option>
+                            <option value="6.5">US 6.5</option>
+                            <option value="7">US 7</option>
+                            <option value="7.5">US 7.5</option>
+                            <option value="8">US 8</option>
+                            <option value="8.5">US 8.5</option>
+                            <option value="9">US 9</option>
+                            <option value="9.5">US 9.5</option>
+                            <option value="10">US 10</option>
+                            <option value="10.5">US 10.5</option>
+                            <option value="11">US 11</option>
+                            <option value= "11.5">US 11.5</option>
+                        </select>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>2. Base Color</legend>
+                        <label>
+                            <input type="radio" name="base-color" value="white"> White
+                        </label>
+                        <label>
+                            <input type="radio" name="base-color" value="black"> Black
+                        </label>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>3. Design Style</legend>
+                        <label>
+                            <input type="radio" name="design-style" value="abstract"> Abstract
+                        </label>
+                        <label>
+                            <input type="radio" name="design-style" value="floral"> Floral
+                        </label>
+                        <label>
+                            <input type="radio" name="design-style" value="geometric"> Geometric
+                        </label>
+                        <label>
+                            <input type="radio" name="design-style" value="character"> Character/Cartoon
+                        </label>
+                        <label>
+                            <input type="radio" name="design-style" value="custom"> Custom
+                        </label>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>4. Design Details</legend>
+                        <textarea name="design-description" rows="5" cols="50" placeholder="Describe your custom design, including colors, patterns, and any specific elements you want to include."></textarea>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>5. Upload Reference Images</legend>
+                        <input type="file" name="reference-images" multiple>
+                        <p>Upload up to 3 reference images to help our artists understand your vision.</p>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>6. Special Instructions</legend>
+                        <textarea name="special-instructions" rows="3" cols="50" placeholder="Any additional instructions or notes?"></textarea>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>7. Price Estimate</legend>
+                        <p>Base Price: $99.99</p>
+                        <p>Additional features may increase the price.</p>
+                        <p>Final price will be confirmed after design review.</p>
+                    </fieldset>
+    
+                    <button type="submit">Submit Design Request</button>
+                </form>
+            </section>
+    
+            <section id="process-explanation">
+                <h2>How It Works</h2>
+                <ol>
+                    <li>Submit your design request using the form above.</li>
+                    <li>Our team will review your request and contact you within 48 hours.</li>
+                    <li>Once approved, we'll create a detailed design mockup.</li>
+                    <li>After your approval, we'll hand-paint your custom shoes.</li>
+                    <li>Your one-of-a-kind shoes will be shipped to you in 2-3 weeks.</li>
+                </ol>
+            </section>
+    
+            <section id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <details>
+                    <summary>How long does the process take?</summary>
+                    <p>From submission to delivery, the entire process typically takes 3-4 weeks.</p>
+                </details>
+                <details>
+                    <summary>Are the paints durable?</summary>
+                    <p>Yes! We use high-quality acrylic paints with a protective sealant to ensure your design lasts.</p>
+                </details>
+                <details>
+                    <summary>Can I wash my custom shoes?</summary>
+                    <p>We recommend spot cleaning only. Machine washing may damage the artwork.</p>
+                </details>
+                <details>
+                    <summary>Can I request changes after seeing the mockup?</summary>
+                    <p>Yes, we allow up to 2 rounds of revisions to ensure you're completely satisfied.</p>
+                </details>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2025 ArtbyKurisu. All rights reserved.</p>
+        </footer>
     </body>
 </html>
