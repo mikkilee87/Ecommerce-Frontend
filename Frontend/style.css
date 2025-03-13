@@ -3,7 +3,7 @@
     font-family: 'Sour Gummy', sans-serif;
 }
 
-ul {
+.top-navigation ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,11 +11,11 @@ ul {
    
 }
 
-li {
+.top-navigation li {
     display: inline;    
 }
 
-li a {
+.top-navigation a {
     display: inline;
     color: rgb(26, 25, 25);
     text-align: center;
@@ -23,7 +23,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.top-navigation li a:hover {
     color: #1182ec;
 }
 
@@ -476,18 +476,11 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
 .custom-body {
-    background-color: #FFF0E5;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
 .custom-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
     background-color: #fff;
     display: flex;
     justify-content: flex-end;
@@ -501,10 +494,10 @@ body {
     color:#333;
     font-weight: 500;
     text-decoration: none;
-    margin-left: 40px;
-}
+    margin-left: 20px;
+ }
 
-.custom-navbar a::before {
+ .custom-navbar a::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -518,3 +511,155 @@ body {
 .custom-navbar a:hover::before {
     width: 100%;
 }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2px auto;
+    padding: 2px; 
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Sour Gummy';
+}
+
+.customizer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.shoe-preview {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.shoe-preview img {
+    width: 100%;
+    max-width: 400px;
+    height:auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.options {
+    flex: 1;
+    min-width: 300px;
+}
+
+.option-group {
+    margin-bottom: 2rem;
+}
+
+.option-group h3 {
+    color: rgb(111, 98, 148);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid (--accent);
+    font-family: 'Sour Gummy';
+}
+
+.style-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.style-option {
+    padding: 10px;
+    border: 2px solid rgb(226, 208, 243);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.style-option:hover, .style-option.selected {
+    background-color: white;
+    color: blue;
+    transform: translateY(-3px);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.file-upload {
+    margin: 15px 0;
+}
+
+.file-upload label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.file-upload-area {
+    border: 2px dashed black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.file-upload-area:hover {
+    background-color: #e8e8e8;
+    border-color:#6f6a6a;
+}
+
+.file-upload-area p {
+    margin: 0;
+    color: #666;
+}
+
+.file-upload input [type=file] {
+    display: none;
+}
+
+.price-summary {
+    padding: 1.5px;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.price-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.faq-section {
+   margin-top: 4rem;
+   padding-top: 2rem;
+   border-top: 1px solid black;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-family: 'Sour Gummy';
+}
+
+details {
+    padding: 10px 10px;
+    margin: 10px;
+}
+
+summary {
+    font-weight: bold;
+}
+
+

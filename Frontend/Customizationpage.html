@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="custom-body">
 
         <header class="custom-header">
             <nav class="custom-navbar">
@@ -22,29 +22,29 @@
             </nav>
         </header>
 
-        <main>
-            <section id="shoe-preview">
-                <h2>Your Custom Shoe Preview</h2>
-                <div>
-                    <img src="" alt="Shoe Preview">
-                </div>
-            </section>
-    
-            <section id="customization-options">
-                <h2>Customization Options</h2>
-                
-                <form id="customization-form">
-                    <fieldset>
-                        <legend>1. Choose Your Shoe</legend>
-                        <select name="shoe-type">
+        <div class="container">
+            <h1>Create Your Custom Painted Shoes</h1>
+            
+            <div class="customizer">
+              <div class="shoe-preview">
+                <img src="Images/white-vans-slipons.jpg" alt="Custom Shoe Preview">
+                <p>* Design preview will be created based on your selections</p>
+              </div>
+              
+              <div class="options">
+                <form action="#" method="GET" enctype="multipart/form-data">
+                  <div class="option-group">
+                    <h3>Choose Your Base Shoe:</h3>
+                        <select name="shoe-model" required>
+                            <option value="">Select Shoe Model</option>
                             <option value="classic-vans">Classic Vans</option>
                             <option value="vans-slip-ons">Vans Slip Ons</option>
                             <option value="converse-high-top">Converse High Tops</option>
                             <option value="toms-slip-on">TOMS Slip-ons</option>
                         </select>
                         
-                        <p>Size:</p>
-                        <select name="shoe-size">
+                        <select name="shoe-size" id="shoe-size" required>
+                            <option value="">Select Shoe Size</option>
                             <option value="5">US 5</option>
                             <option value="5.5">US 5.5</option>
                             <option value="6">US 6</option>
@@ -60,98 +60,112 @@
                             <option value="11">US 11</option>
                             <option value= "11.5">US 11.5</option>
                         </select>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>2. Base Color</legend>
-                        <label>
-                            <input type="radio" name="base-color" value="white"> White
-                        </label>
-                        <label>
-                            <input type="radio" name="base-color" value="black"> Black
-                        </label>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>3. Design Style</legend>
-                        <label>
-                            <input type="radio" name="design-style" value="abstract"> Abstract
-                        </label>
-                        <label>
-                            <input type="radio" name="design-style" value="floral"> Floral
-                        </label>
-                        <label>
-                            <input type="radio" name="design-style" value="geometric"> Geometric
-                        </label>
-                        <label>
-                            <input type="radio" name="design-style" value="character"> Character/Cartoon
-                        </label>
-                        <label>
-                            <input type="radio" name="design-style" value="custom"> Custom
-                        </label>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>4. Design Details</legend>
-                        <textarea name="design-description" rows="5" cols="50" placeholder="Describe your custom design, including colors, patterns, and any specific elements you want to include."></textarea>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>5. Upload Reference Images</legend>
-                        <input type="file" name="reference-images" multiple>
-                        <p>Upload up to 3 reference images to help our artists understand your vision.</p>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>6. Special Instructions</legend>
-                        <textarea name="special-instructions" rows="3" cols="50" placeholder="Any additional instructions or notes?"></textarea>
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>7. Price Estimate</legend>
-                        <p>Base Price: $99.99</p>
-                        <p>Additional features may increase the price.</p>
-                        <p>Final price will be confirmed after design review.</p>
-                    </fieldset>
-    
-                    <button type="submit">Submit Design Request</button>
+
+                        <select name="shoe-width" required>
+                            <option value="">Select Shoe Width</option>
+                            <option value="narrow">Narrow</option>
+                            <option value="wide">Wide</option>
+                            <option value="x-wide">Extra Wide</option>
+                        </select>
+
+                  </div>
+                  
+                  <div class="option-group">
+                    <h3>Base Color:</h3>
+                    <div class="color-options">
+                        <select name="base-color" id="base-color" required>
+                            <option value="">Select Base Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                        </select>
+                      </div>
+
+                  <div class="option-group">
+                    <h3>Art Style:</h3>
+                    <div class="style-options">
+                      <div class="style-option">Abstract</div>
+                      <div class="style-option">Floral</div>
+                      <div class="style-option">Geometric</div>
+                      <div class="style-option">Character</div>
+                      <div class="style-option">Custom</div>
+                    </div>
+                    <input type="hidden" name="art-style" value="Abstract">
+                  </div>
+                  
+                  <div class="option-group">
+                    <h3>Custom Design Details:</h3>
+                    <label for="design-description">Design Description:</label>
+                    <textarea id="design-description" name="design-description" placeholder="Describe your dream design in detail..." required></textarea>
+                    
+                    <div class="file-upload">
+                      <label for="reference-images">Upload Reference Images <strong>(Max 5):</strong></label>
+                      <label class="file-upload-area">
+                        <p>Click or drag files here to upload</p>
+                        <p>JPG, PNG or PDF files up to 5MB each</p>
+                      </label>                      
+                    </div>
+                    
+                    <label for="special-instructions">Special Instructions:</label>
+                    <textarea id="special-instructions" name="special-instructions" placeholder="Any specific requirements or details for our artists..."></textarea>
+                  </div>
+                  
+                  <div class="price-summary">
+                    <h3>Price Summary</h3>
+                    <div class="price-row">
+                      <span>Base Shoe</span>
+                      <span>$55.00</span>
+                    </div>
+                    <div class="price-row">
+                      <span>Custom Painting</span>
+                      <span>$70.99</span>
+                    </div>
+                    <div class="price-row">
+                      <span>Custom Design Fee</span>
+                      <span>$20.00</span>
+                    </div>
+                    <div class="price-row price-total">
+                      <span>Total</span>
+                      <span>$145.99</span>
+                    </div>
+                  </div>
+
+                  <div class="customer-name">
+                    <label for="customer-name">Your Name:</label>
+                    <input type="text" id="customer-name" name="customer-name" required>
+                  </div>
+                  
+                  <div class="customer-email">
+                    <label for="customer-email">Email Address:</label>
+                    <input type="email" id="customer-email" name="customer-email" required>
+                  </div>
+                              
+                  <button type="submit" class="submit-design-button design-block">Submit Design Request</button>
                 </form>
-            </section>
-    
-            <section id="process-explanation">
-                <h2>How It Works</h2>
-                <ol>
-                    <li>Submit your design request using the form above.</li>
-                    <li>Our team will review your request and contact you within 48 hours.</li>
-                    <li>Once approved, we'll create a detailed design mockup.</li>
-                    <li>After your approval, we'll hand-paint your custom shoes.</li>
-                    <li>Your one-of-a-kind shoes will be shipped to you in 2-3 weeks.</li>
-                </ol>
-            </section>
-    
-            <section id="faq">
+              </div>
+            </div>
+            
+            <section class="faq-section">
                 <h2>Frequently Asked Questions</h2>
                 <details>
                     <summary>How long does the process take?</summary>
-                    <p>From submission to delivery, the entire process typically takes 3-4 weeks.</p>
+                    <p>Most custom painted shoes take 2-3 weeks to complete from the date of order confirmation. Complex designs may take up to 4 weeks. You'll receive progress updates throughout the process.</p>                    
                 </details>
                 <details>
-                    <summary>Are the paints durable?</summary>
-                    <p>Yes! We use high-quality acrylic paints with a protective sealant to ensure your design lasts.</p>
+                    <summary>Are the custom painted designs waterproof?</summary>
+                    <p>Yes! All of our designs are sealed with a water-resistant and flexible finisher that protects the artwork while allowing the shoes to flex naturally. However, we recommend avoiding heavy rain or puddles to maximize the lifespan of your custom shoes.</p>
                 </details>
                 <details>
                     <summary>Can I wash my custom shoes?</summary>
                     <p>We recommend spot cleaning only. Machine washing may damage the artwork.</p>
                 </details>
                 <details>
-                    <summary>Can I request changes after seeing the mockup?</summary>
-                    <p>Yes, we allow up to 2 rounds of revisions to ensure you're completely satisfied.</p>
+                    <summary>Can I request revisions to the design?</summary>
+                    <p>We provide 2 rounds of digital revisions before beginning the painting process. You can request reasonable adjustments at this stage. Once painting begins, major changes may incur additional fees.</p>
                 </details>
             </section>
-        </main>
-    
+        
         <footer>
-            <p>&copy; 2025 ArtbyKurisu. All rights reserved.</p>
+            <p id="copyright">&copy; 2025 ArtbyKurisu. All rights reserved.</p>
         </footer>
     </body>
 </html>
