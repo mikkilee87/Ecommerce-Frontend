@@ -9,6 +9,8 @@ addCartButtons.forEach(button => {
    button.addEventListener ("click", event => {
     const productBox = event.target.closest (".product-box");
     addToCart(productBox);
+    alert("Product added to cart.");
+    return;
    }); 
 });
 

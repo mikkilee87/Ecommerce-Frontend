@@ -95,136 +95,6 @@ body {
     font-size: 10px;
 }
 
-.contact-us-body {
-    background-image: linear-gradient(40deg,
-    hsl(240deg 56% 48%) 0%,
-    hsl(250deg 48% 49%) 10%,
-    hsl(260deg 40% 49%) 24%,
-    hsl(271deg 34% 50%) 42%,
-    hsl(285deg 28% 50%) 57%,
-    hsl(305deg 24% 50%) 68%,
-    hsl(325deg 29% 54%) 75%,
-    hsl(340deg 34% 58%) 81%,
-    hsl(354deg 40% 62%) 85%,
-    hsl(358deg 39% 63%) 89%,
-    hsl(353deg 31% 62%) 92%,
-    hsl(345deg 22% 61%) 94%,
-    hsl(330deg 14% 60%) 96%,
-    hsl(284deg 9% 60%) 97%,
-    hsl(232deg 12% 62%) 98%,
-    hsl(212deg 22% 61%) 99%,
-    hsl(204deg 32% 60%) 100%,
-    hsl(200deg 41% 58%) 100%);
-background-repeat: no-repeat;
-height: 99vh;
-overflow-y: hidden;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: 'Quicksand', sans-serif;
-}
-
-.formBox {
-    padding: 15px;
-    text-align: center;
-    min-height: 50vh;
-    min-width: 50vw;
-    display: flex;
-    flex-direction: column;
-    background: #f8f8f885;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-}
-
-#contact-title {
-    margin-bottom: 10px;
-    font-family: 'Sour Gummy', sans-serif;
-    color: rgb(243, 82, 41);
-}
-.contact-paragraph {
-    font-weight: 500;
-    font-size: 1.1em;
-}
-
-form {
-    padding: 10px;
-}
-
-form>div {
-    padding: 10px;
-    position: relative;
-    font-size: 1.3em;
-}
-
-form>div i {
-    position: absolute;
-    top: 22px;
-    margin-left: 10px;
-    opacity: 0.3;
-}
-
-.contact-label {
-    font-weight: bold;
-    font-family: 'Sour Gummy', sans-serif;
-}
-
-form>div input {
-    height: 2em;
-    width: 70vw;
-    padding-left: 40px;
-    font-size: 1em;
-    border-radius: 20px;
-    outline: none;
-    border: 1px solid #b5adad;
-    background-color: #ffffff;
-}
-
-div>input:focus {
-    border: 1px solid #6f6a6a;
-}
-
-form>div:hover>i {
-    opacity: 1;
-    transition: opacity 1s;
-}
-
-textarea {
-    border: none;
-    width: 70vw;
-    border-radius: 20px;
-    padding: 10px;
-    outline: none;
-    font-size: 1em;
-}
-
-#btn-send-message {
-    width: 50%;
-    height: 5;
-    color: #ffffff;
-    background-color: rgba(6, 129, 245, 0.815);
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.8em;
-    font-family: 'Sour Gummy', sans-serif;
-}
-
-#btn-send-message:hover {
-    cursor: pointer;
-    background-color: rgb(3, 60, 184);
-}
-
-@media screen and (min-width:900px) {
-    form>div input {
-        width: 50vw;
-    }
-
-    textarea {
-        width: 50vw;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -293,8 +163,7 @@ body {
 }
 
 .product-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: inline;
     gap: 30px;
 }
 
@@ -305,7 +174,7 @@ body {
 } 
 
 .img-box img {
-    width: 100%;
+    width: 35%;
     transition: 0.5s;
 }
 
@@ -332,11 +201,17 @@ body {
 
 .price-and-cart .add-cart {
     padding: 10px;
-    background-color: #e35f26;
+    background-color: rgba(6, 129, 245, 0.815);
     border-radius: 6px;
     font-size: 20px;
     color: #fff;
     cursor: pointer;
+    border: none;
+}
+
+.add-cart:hover {
+    background-color: rgb(3, 60, 184);
+    transition: 0.3s;
 }
 
 .cart {
@@ -468,198 +343,3 @@ body {
         width: 100%;
     }
 }
-
-/* creating custom css code to delelte later */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.custom-body {
-    line-height: 1.6;
-}
-
-.custom-header {
-    background-color: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 100;
-}
-
-.custom-navbar a {
-    position: relative;
-    font-size: 18px;
-    color:#333;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 20px;
- }
-
- .custom-navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #333;
-    transition: 0.3s;
-}
-
-.custom-navbar a:hover::before {
-    width: 100%;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 2px auto;
-    padding: 2px; 
-}
-
-h1 {
-    text-align: center;
-    font-family: 'Sour Gummy';
-}
-
-.customizer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.shoe-preview {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-}
-
-.shoe-preview img {
-    width: 100%;
-    max-width: 400px;
-    height:auto;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.options {
-    flex: 1;
-    min-width: 300px;
-}
-
-.option-group {
-    margin-bottom: 2rem;
-}
-
-.option-group h3 {
-    color: rgb(111, 98, 148);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid (--accent);
-    font-family: 'Sour Gummy';
-}
-
-.style-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-}
-
-.style-option {
-    padding: 10px;
-    border: 2px solid rgb(226, 208, 243);
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.style-option:hover, .style-option.selected {
-    background-color: white;
-    color: blue;
-    transform: translateY(-3px);
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-.file-upload {
-    margin: 15px 0;
-}
-
-.file-upload label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.file-upload-area {
-    border: 2px dashed black;
-    padding: 20px;
-    text-align: center;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: #f8f8f8;
-}
-
-.file-upload-area:hover {
-    background-color: #e8e8e8;
-    border-color:#6f6a6a;
-}
-
-.file-upload-area p {
-    margin: 0;
-    color: #666;
-}
-
-.file-upload input [type=file] {
-    display: none;
-}
-
-.price-summary {
-    padding: 1.5px;
-    border-radius: 4px;
-    margin: 2px 0;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-}
-
-.price-total {
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-top: 1px solid black;
-    padding-top: 10px;
-    margin-top: 10px;
-}
-
-.faq-section {
-   margin-top: 4rem;
-   padding-top: 2rem;
-   border-top: 1px solid black;
-}
-
-.faq-section h2 {
-    text-align: center;
-    font-family: 'Sour Gummy';
-}
-
-details {
-    padding: 10px 10px;
-    margin: 10px;
-}
-
-summary {
-    font-weight: bold;
-}
-
-
