@@ -36,18 +36,18 @@ listOfItems.forEach((item) => {
 }
 
 function addToCart() {
-    let dropdownList = document.getElementById("prodcut-options");
-    let myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
-    let myCurrentPrice = Number(dropdownList.value);
-    let myStoredPrice = Number(localStorage.getItem("totalPrice")) || 0;
-    let myTotalPrice = myCurrentPrice + myStoredPrice;
-    console.log("test button")
-;  alert(
+    const dropdownList = document.getElementById("product-options");
+    const myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
+    const myCurrentPrice = Number(dropdownList.value);
+    const myStoredPrice = parseFloat(localStorage.getItem("totalPrice")) || 0;
+    const myTotalPrice = myCurrentPrice + myStoredPrice;
+    
+    alert(
     myCurrentItem +
       " added to your Cart. \nTotal price is $" +
       myTotalPrice.toFixed(2)
   );
-  localStorage.setItem("totalPrice", myTotalPrice.toFixed(2));
+  localStorage.setItem("totalPrice", myTotalPrice);
 }
 
 function updatePrice(price) {
