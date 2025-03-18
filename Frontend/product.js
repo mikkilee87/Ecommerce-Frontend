@@ -1,126 +1,72 @@
-const cartIcon = document.querySelector("#cart-icon");
-const cart = document.querySelector(".cart");
-const cartClose = document.querySelector("#cart-close");
-cartIcon.addEventListener("click", () => cart.classList.add("active"));
-cartClose.addEventListener("click", () => cart.classList.remove("active"));
+function jsDropdown() {
+    let dropdownList = document.getElementById("product-options");
+    const listOfItems = [
+        {
+            name: "Full Shoe Design",
+            price: 110.00,
+        },
+        {
+            name:"Small Side Design",
+            price: 95.00,
+        },
+        {
+            name: "Front Design",
+            price: 95.00,
+        },
+        {
+            name:"Full Shoe Design + Shoe",
+            price: 180.00,
+        },
+        {
+            name: "Small Side Design + Shoe",
+            price: 165.00,
+        },
+        {
+            name: "Front Design + Shoe",
+            price: 165.00,
+        },
+    ];
 
-const addCartButtons = document.querySelectorAll(".add-cart");
-addCartButtons.forEach(button => {
-   button.addEventListener ("click", event => {
-    const productBox = event.target.closest (".product-box");
-    addToCart(productBox);
-    alert("Product added to cart.");
-    return;
-   }); 
-});
-
-const cartContent = document.querySelector(".cart-content");
-const addToCart = productBox => {
-    const productImgSrc = productBox.querySelector("img").src;
-    const productTitle = productBox.querySelector(".product-title").textContent;
-    const productPrice = productBox.querySelector(".price").textContent;
-
-    const cartItems = cartContent.querySelectorAll(".cart-product-title");
-    for (let item of cartItems) {
-        if (item.textContent === productTitle) {
-            alert("This item is already in your cart.");
-            return;
-        }
-    }
-
-    const cartBox = document.createElement("div");
-    cartBox.classList.add("cart-box");
-    cartBox.innerHTML = `
-     <img src="${productImgSrc}" class="cart-img">
-                    <div class="cart-detail">
-                        <h2 class="cart-product-title">${productTitle}</h2>
-                        <span class="cart-price">${productPrice}</span>
-                        <div class="cart-quantity">
-                            <button id="decrement">-</button>
-                            <span class="number">1</span>
-                            <button id="increment">+</button>
-                        </div>
-                    </div>
-                    <i class="ri-delete-bin-line cart-remove"></i>
-    `;
-
-    cartContent.appendChild(cartBox);
-
-    cartBox.querySelector(".cart-remove").addEventListener("click", () => {
-        cartBox.remove();
-
-        updateCartCount (-1);
-
-        updateTotalPrice();
+listOfItems.forEach((item) => {
+    let option = document.createElement("option");
+    option.text = item.name;
+    option.value = item.price;
+    dropdownList.add(option);
     });
+}
 
-    cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
-        const numberElement = cartBox.querySelector(".number");
-        const decrementButton = cartBox.querySelector("#decrement");
-        let quantity = numberElement.textContent;
-        quantity = parseInt(quantity);
+function addToCart() {
+    let dropdownList = document.getElementById("prodcut-options");
+    let myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
+    let myCurrentPrice = Number(dropdownList.value);
+    let myStoredPrice = Number(localStorage.getItem("totalPrice")) || 0;
+    let myTotalPrice = myCurrentPrice + myStoredPrice;
+    console.log("test button")
+;  alert(
+    myCurrentItem +
+      " added to your Cart. \nTotal price is $" +
+      myTotalPrice.toFixed(2)
+  );
+  localStorage.setItem("totalPrice", myTotalPrice.toFixed(2));
+}
 
-        if (event.target.id === "decrement" && quantity > 1) {
-            quantity--;
-            if (quantity === 1) {
-                decrementButton.style.color = "#999";
-            }
-        } else if (event.target.id === "increment") {
-            quantity++;
-            decrementButton.style.color = "#333";
-        }
-
-        numberElement.textContent = quantity;
-
-        updateTotalPrice();
-    });
-
-    updateCartCount (1);
-
-    updateTotalPrice();
-};
-
-const updateTotalPrice = () => {
-    const totalPriceElement = document.querySelector(".total-price");
-    const cartBoxes = cartContent.querySelectorAll(".cart-box");
-    let total = 0;
-    cartBoxes.forEach(cartBox => {
-        const priceElement = cartBox.querySelector(".cart-price");
-        const quantityElement = cartBox.querySelector(".number");
-        const price = priceElement.textContent.replace("$", "");
-        const quantity = quantityElement.textContent;
-        total += price * quantity;
-    });
-    totalPriceElement.textContent = `$${total}`; 
-};
-
-let cartItemCount = 0;
-const updateCartCount = change => {
-    const cartItemCountBadge = document.querySelector(".cart-item-count");
-    cartItemCount += change;
-    if (cartItemCount > 0) {
-        cartItemCountBadge.style.visibility = "visible";
-        cartItemCountBadge.textContent = cartItemCount;
+function updatePrice(price) {
+    document.getElementById("current-price").innerHTML = "$" + price;
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    jsDropdown();
+    let dropdownList = document.getElementById("product-options");
+    let savedDdSelection = localStorage.getItem("selectedItem");
+    if (savedDdSelection) {
+      dropdownList.value = savedDdSelection;
+      updatePrice(savedDdSelection);
     } else {
-        cartItemCountBadge.style.visibility = "hidden";
-        cartItemCountBadge.textContent = "";
+      let initialPrice = dropdownList.value;
+      updatePrice(initialPrice);
     }
-};
-
-const buyNowButton = document.querySelector (".btn-buy");
-buyNowButton.addEventListener("click", () => {
-    const cartBoxes = cartContent.querySelectorAll(".cart-box");
-    if (cartBoxes.length === 0) {
-        alert("Your cart is empty. Please add items to your cart before buying.");
-        return;
-    }
-
-    cartBoxes.forEach(cartBox => cartBox.remove());
-
-    cartItemCount = 0;
-    updateCartCount(0);
-
-    updateTotalPrice();
-
-    alert("Thank you for your purchase!")
-});
+    dropdownList.addEventListener("change", function () {
+      let itemPrice = dropdownList.value;
+      updatePrice(itemPrice);
+      localStorage.setItem("selectedItem", itemPrice);
+    });
+  });

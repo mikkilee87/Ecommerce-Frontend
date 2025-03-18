@@ -1,6 +1,7 @@
 #painted-shoes{
     text-align: center;
     font-family: 'Sour Gummy', sans-serif;
+    margin-top: 40px;
 }
 
 .top-navigation ul {
@@ -30,13 +31,19 @@
 .content {
     background-color: white;
     padding: 15px;
-    margin: auto;
     text-align: center;
 }
 
-.sesame-street{
+.product-img {
     height: 400px;
     width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.product-img:hover {
+transform: scale(1.1);
 }
 
 body {
@@ -45,30 +52,21 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     }
-#description {
+#description-header {
     font-family: 'Sour Gummy', sans-serif;
 }
 
-.description-of-work {
+#description-item {
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.price-and-cart {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .add-to-cart {
     text-align: center;
-}
-
-#add-to-cart-button {
-    background-color: rgba(6, 129, 245, 0.815);
-    color: white; 
-    text-align: center;
-    border: none;
-    padding: 5px;
-    border-radius: 8px;
-}
-
-#add-to-cart-button:hover {
-    background-color: rgb(3, 60, 184);
-    transition: 0.7s;
 }
 
 .styled-table {
@@ -99,11 +97,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-   color: #333; 
+    font-family: 'Sour Gummy', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
 .cart-header {
@@ -111,7 +112,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 25px 9%;
+    padding: 10px 9%;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -120,35 +121,27 @@ body {
     z-index: 99;
 }
 
-.logo{
-    font-size: 25px;
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-    font-family: 'Sour Gummy';
-}
-
 #cart-icon {
-  position: relative;
-  display: flex;  
-  font-size: 30px;
-  cursor: pointer;
+    position: relative;
+    display: flex;  
+    font-size: 30px;
+    cursor: pointer;
 }
 
 #cart-icon .cart-item-count {
-  position: absolute;
-  top: 0px;
-  right: -6px;
-  width: 20px;
-  height: 20px;
-  background-color: #e35f26;
-  border-radius: 50%;
-  font-size: 12px;
-  color: #fff;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  visibility: hidden; 
+    position: absolute;
+    top: 0px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background-color: #e35f26;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    visibility: hidden; 
 }
 
 .shop {
@@ -156,25 +149,35 @@ body {
 }
 
 .section-title {
-   font-size: 35px;
-   text-align: center;
-   margin-bottom: 15px;
-   font-family: 'Sour Gummy', sans-serif; 
-}
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Sour Gummy', sans-serif; 
+ }
+  
 
 .product-content {
-    display: inline;
-    gap: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
 }
 
-.product-box .img-box {
+.product-box .img-box img {
+    background-color: #ddd;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
     display: flex;
-    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
     overflow: hidden;
-} 
+}
 
 .img-box img {
-    width: 35%;
+    width: 100%;
     transition: 0.5s;
 }
 
@@ -182,36 +185,32 @@ body {
    transform: scale(1.1); 
 }
 
-.product-box .product-title {
-    font-size: 20px;
-    margin-top: 10px;
-    font-family: 'Sour Gummy';
-}
-
-.product-box .price-and-cart {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price-and-cart .price {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.price-and-cart .add-cart {
-    padding: 10px;
+.add-cart {
     background-color: rgba(6, 129, 245, 0.815);
-    border-radius: 6px;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
     border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
-
 .add-cart:hover {
     background-color: rgb(3, 60, 184);
-    transition: 0.3s;
+}
+
+.product-design {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .cart {
@@ -332,14 +331,4 @@ body {
     right: 15px;
     font-size: 35px;
     cursor: pointer;
-}
-
-@media screen and (max-width: 360px) {
-    .product-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .cart {
-        width: 100%;
-    }
 }
