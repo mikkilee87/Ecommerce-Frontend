@@ -1,72 +1,62 @@
-function jsDropdown() {
-    let dropdownList = document.getElementById("product-options");
-    const listOfItems = [
-        {
-            name: "Full Shoe Design",
-            price: 110.00,
-        },
-        {
-            name:"Small Side Design",
-            price: 95.00,
-        },
-        {
-            name: "Front Design",
-            price: 95.00,
-        },
-        {
-            name:"Full Shoe Design + Shoe",
-            price: 180.00,
-        },
-        {
-            name: "Small Side Design + Shoe",
-            price: 165.00,
-        },
-        {
-            name: "Front Design + Shoe",
-            price: 165.00,
-        },
+const PRODUCT_OPTIONS = [
+        { name: "Full Shoe Design", price: 110.00, },
+        { name:"Small Side Design", price: 95.00, },
+        { name: "Front Design", price: 95.00, },
+        { name:"Full Shoe Design + Shoe", price: 180.00, },
+        { name: "Small Side Design + Shoe", price: 165.00, },
+        { name: "Front Design + Shoe", price: 165.00, },
     ];
 
-listOfItems.forEach((item) => {
-    let option = document.createElement("option");
-    option.text = item.name;
-    option.value = item.price;
-    dropdownList.add(option);
+function initializeDropdown() {
+    const dropdownList = document.getElementById("product-options");
+    dropdownList.innerHTML = "";
+    PRODUCT_OPTIONS.forEach((product) => {
+        const option = document.createElement("option");
+        option.text = product.name;
+        option.value = product.price;
+        dropdownList.appendChild(option);
     });
 }
 
 function addToCart() {
     const dropdownList = document.getElementById("product-options");
-    const myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
-    const myCurrentPrice = Number(dropdownList.value);
-    const myStoredPrice = parseFloat(localStorage.getItem("totalPrice")) || 0;
-    const myTotalPrice = myCurrentPrice + myStoredPrice;
+    const selectedIndex = dropdownList.selectedIndex;
+
+    const selectedItem = dropdownList.options[selectedIndex].text;
+    const selectedPrice = Number(dropdownList.value);
+
+    const cartTotal = parseFloat(localStorage.getItem("totalPrice")) || 0;
+    const newTotal = cartTotal + selectedPrice;
+
+    localStorage.setItem("totalPrice", newTotal);
     
     alert(
-    myCurrentItem +
+    selectedItem +
       " added to your Cart. \nTotal price is $" +
-      myTotalPrice.toFixed(2)
+      newTotal.toFixed(2)
   );
-  localStorage.setItem("totalPrice", myTotalPrice);
+
 }
 
-function updatePrice(price) {
-    document.getElementById("current-price").innerHTML = "$" + price;
+function updateDisplayedPrice(price) {
+    const priceElement = document.getElementById("current-price");
+    priceElement.textContent = `$${price}`;
   }
-  document.addEventListener("DOMContentLoaded", function () {
-    jsDropdown();
-    let dropdownList = document.getElementById("product-options");
-    let savedDdSelection = localStorage.getItem("selectedItem");
-    if (savedDdSelection) {
-      dropdownList.value = savedDdSelection;
-      updatePrice(savedDdSelection);
-    } else {
-      let initialPrice = dropdownList.value;
-      updatePrice(initialPrice);
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeDropdown();
+    
+    const dropdownList = document.getElementById("product-options");
+    
+    const savedSelection = localStorage.getItem("selectedItem");
+    if (savedSelection) {
+      dropdownList.value = savedSelection;
     }
-    dropdownList.addEventListener("change", function () {
-      let itemPrice = dropdownList.value;
-      updatePrice(itemPrice);
-      localStorage.setItem("selectedItem", itemPrice);
+    
+    updateDisplayedPrice(dropdownList.value);
+    
+    dropdownList.addEventListener("change", () => {
+      const selectedPrice = dropdownList.value;
+      updateDisplayedPrice(selectedPrice);
+      localStorage.setItem("selectedItem", selectedPrice);
     });
   });
