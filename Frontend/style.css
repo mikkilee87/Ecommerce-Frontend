@@ -1,3 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF0E5;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+}
+
 #painted-shoes{
     text-align: center;
     font-family: 'Sour Gummy', sans-serif;
@@ -46,12 +63,6 @@
 transform: scale(1.1);
 }
 
-body {
-    background-color: #FFF0E5;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    }
 #description-header {
     font-family: 'Sour Gummy', sans-serif;
 }
@@ -91,20 +102,6 @@ body {
 #copyright {
     text-align: center;
     font-size: 10px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Sour Gummy', sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
 }
 
 .cart-header {
@@ -331,4 +328,52 @@ body {
     right: 15px;
     font-size: 35px;
     cursor: pointer;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-button {
+    background-color: rgba(6, 129, 245, 0.815);
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 14px;
+    color:#fff
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.modal-content h1 {
+    margin: 0;
+}
+
+.modal-content p {
+    font-size: 14px;
+    opacity: 0.7;
 }
