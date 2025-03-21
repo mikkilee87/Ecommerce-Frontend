@@ -7,10 +7,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     </head>
     <body>
-        <section>
-            <h1 id="painted-shoes">Custom Painted Shoes</h1>
+        <header class="cart-header">
             <nav class="top-navigation">
                 <ul>
                     <li><a href="product.html">Home</a></li>
@@ -19,15 +19,46 @@
                     <li><a href="contactuspage.html">Contact Us</a></li>   
                 </ul>
             </nav>
-        </section>
-        <div class="content">
-            <main>
-                <section>
-                        <img src="Images/sesame-street.png" alt="sesame-street" class="sesame-street">
-                </section>
+            <div id="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-item-count"></span>
+            </div>
+        </header>
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <div class="cart-content">
+            <!--   <div id="cart-box">
+                    <button id="cart-icon" onclick="displayCart()"><span id="cart-total-items">0</span></button>
+                    <img src="Images/sesame-street.png" class="cart-img">
+                    <div class="cart-detail">
+                        <div id="cart-hover">
+                            <ul id="cart-items-list"></ul>
+                            <p id="total">Total:$<span id="cart-total">0.00</span></p>
+                        </div>
+                    </div>
+                    <i class="ri-delete-bin-line cart-remove"></i>
+                </div> -->
+            </div>
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$0</div>
+            </div>
+            <button class="btn-buy">Buy Now</button>
+            <button class="btn-view-cart">View Cart</button>
+            <i class="ri-close-line" id="cart-close"></i>
+        </div>
+        <br>
+        <h1 id="painted-shoes">Custom Painted Shoes</h1>
+        <br>
         <section>
-                <h2 id="description">Description</h2>
-                <p class="description-of-work">
+            <img src="Images/purple-galaxy-shoes.jpg" alt="purple-galaxy-shoes" class="product-img">
+        </section>
+        <br>
+        <div class="content">
+            <main>                
+        <section>
+                <h2 id="description-header">Description</h2>
+                <p id="description-item">
                     These shoes are made completely to order! 
                     Please feel free to message with any questions about a particular design you're interested in. 
                     We can work together to come up with artwork ideas that you love!
@@ -38,14 +69,24 @@
                     we will send photos of the finished product before dispatching to make sure you are 100% happy.
                 </p>
         </section>
+        <br>
+        <section class="product-box">
+            <div class="price-and-cart">
+                <p id="price-text">Price</p>
+                <p id="current-price">$0.00</p>
+                <label for="product-title">Shoe Design:</label>
+                <select id="product-options"></select> 
+            </div>
+        </section>
+            <br>
             <form class="add-to-cart">
-                <button id="add-to-cart-button">Add to cart</button>
+                <button type="button" onclick="addToCart()" class="add-cart"><i class="ri-shopping-cart-2-line"></i>Add to Cart</button>
             </form>
             <section class="shoe-invoicing-table">
                 <table class="styled-table">
                     <thead>
                         <tr class="styled-header">
-                            <th>Shoe Type</th>
+                            <th>Shoe Design</th>
                             <th>Shoe Size</th>
                             <th>Quantity</th>
                             <th>Shoe Color</th>
@@ -190,8 +231,20 @@
                 </section>
             </main>
         </div>
+        <button id="open" class="modal-button">click me</button>
+        <div id="modal-container" class="modal-container">
+            <div class="modal-content">
+                <h2>Thank you for your purchase</h2>
+                <br>
+                <p>Design added to cart</p>
+                <br>
+                <button id="close" class="modal-button"><span class="close">&times;</span>Close</button>
+            </div>
+        </div>
+        <br>
             <footer>
                 <p id="copyright">&copy;2025 ArtbyKurisu. All rights reserved</p>
             </footer>
+        <script src="product.js"></script> 
     </body>
 </html>
