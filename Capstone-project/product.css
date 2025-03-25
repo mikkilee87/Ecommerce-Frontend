@@ -27,8 +27,14 @@ body{
     z-index: 100;
 }
 
-main {
-    flex-grow: 1;
+.logo {
+    width: auto;
+    height: 50px;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
 }
 
 #cart-icon {
@@ -36,6 +42,15 @@ main {
     display: flex;  
     font-size: 30px;
     cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 20px;
 }
 
 .navbar a {
@@ -60,6 +75,10 @@ main {
 
 .navbar a:hover::before {
     width: 100%; 
+}
+
+main {
+    flex-grow: 1;
 }
 
 footer {
