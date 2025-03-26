@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout Page</title>
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="Images and Logos/nature-pet-store.jpg" alt="pet store logo">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="#">Cart</a></li>               
+                    <li><a href="#">Contact Us</a> </li> 
+                </ul>
+            </nav>
+            <div id="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-item-count"></span>
+            </div>
+        </header>
+        <main>
+            <section class="checkout">
+                <h1 class="section-title">Checkout</h1>
+                <div class="checkout-content">
+                    <form class="checkout-box" action="#">
+                        <div class="total-amount">
+                            <label class="checkout-label">
+                                Total Amount :
+                                <input type="text" name="total amount" id="total-amount" placeholder="Enter amount">
+                            </label>
+                            </div>
+                        <div class="payment-method">
+                            <label class="checkout-label">
+                                Payment Method : 
+                                <input type="radio" id="crecit-card" name="payment" value="credit card">
+                                <label for="creditcard">Credit Card</label><br>
+                                <input type="radio" id="debit-card" name="payment" value="debit card">
+                                <label for="debitcard">Debit Card</label><br>
+                                <input type="radio" id="payPal" name="payment" value="payPal">
+                                <label for="payPal">Paypal</label><br>
+                                <input type="radio" id="cod" name="payment" value="cash on delivery">
+                                <label for="cash on delivery">Cash on delivery</label><br>
+                                
+                            </label>
+                        </div>
+                        <div class="shiping-info">
+                            <label class="checkout-label">
+                                Shipping Address :
+                                <textarea name="query" id="query" cols="30" rows="3"
+                                placeholder="Shipping address here"></textarea>
+                            </label>
+                        </div>
+                        <div class="button-container">
+                            <button class="checkout-btn" id="checkout-btn" type="button">
+                                <i class="ri-shopping-bag-line"></i>Checkout
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="social-icon-container">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy;2025 Purrfect Pets. All rights reserved</p>
+        </footer>
+        <script src="checkout.js"></script>
+    </body>
+</html>
