@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Products Listing Page</title>
+        <title>Pet Shop Products</title>
         <link rel="stylesheet" href="products.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +13,11 @@
     <body>
         <header class="header">
             <a href="#" class="logo">
-                <img src="Images and Logos/pngtree-food-pet-shop-logo-picture-image_8046483.png" alt="pet logo">
+                <img src="Images and Logos/nature-pet-store.jpg" alt="pet store logo">
             </a>
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Customize</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="#">Cart</a></li>               
                     <li><a href="#">Contact Us</a> </li> 
@@ -37,13 +36,16 @@
                     <!-- Product 1 -->
                     <div class="product-box">
                         <div class="img-box">
-                            <img src="" alt="">
+                            <img src="placeholder" alt="">
                         </div>
-                        <h2 class="product-title"></h2>
-                        <span class="price"></span>
+                        <span class="category-tag">Dog Food</span>
+                        <h2 class="product-title">Premium Dog Food</h2>
+                        <span class="price">$54.99</span>
                         <div class="product-details">
                             <!-- Stock availability indicator -->
-                            <span class="stock-status in-stock"></span>
+                            <span class="stock-status in-stock"><i class="ri-checkbox-circle-line"></i> In Stock</span>
+                            <span class="items-left">25 available</span>
+                            <div class="shipping-info">Free shipping over $50</div>
                         </div>
                         <div class="product-actions">
                             <a href="product.html" class="view-details-btn">View Details</a>
@@ -58,6 +60,35 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="placeholder" alt="">
+                        </div>
+                        <span class="category-tag">Cat Furniture</span>
+                        <h2 class="product-title">Cat Scratching Tree</h2>
+                        <span class="price">$89.99</span>
+                        <div class="product-details">
+                            <!-- Stock availability indicator -->
+                            <span class="stock-status in-stock"><i class="ri-checkbox-circle-line"></i> In Stock</span>
+                            <span class="items-left">12 available</span>
+                            <div class="shipping-info">Free shipping over $50</div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product.html" class="view-details-btn">View Details</a>
+                            <!-- Add to cart button with quantity control -->
+                            <div class="add-to-cart-container">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn quantity-minus">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="quantity-btn quantity-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>
@@ -69,7 +100,7 @@
                 <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
             </div>
-            <p>&copy;2025 ArtbyKurisu. All rights reserved</p>
+            <p>&copy;2025 Purrfect Pets. All rights reserved</p>
         </footer>
         <script src="products.js"></script>
     </body>
