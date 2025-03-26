@@ -124,20 +124,15 @@ main {
     font-size: 1.1em;
 }
 
-.checkout-box input [type="text"],
-.checkot-box textarea {
-    width: 90%;
+.checkout-box input[type="text"],
+.checkout-box textarea {
+    width: 100%;
     padding: 12px 15px;
     font-size: 1em;
     outline: none;
     border: 1px solid #b5adad;
     background-color: #fff;
     transition: all 0.3s ease;
-    align-self: center;
-}
-
-.total-amount {
-    margin-bottom: 20px;
 }
 
 .total-amount input {
@@ -148,22 +143,34 @@ main {
     margin-bottom: 20px;
 }
 
-.payment-method input [type="radio"] {
+.radio-option {
+    display: flex;
+    align-items: center;
     margin: 8px 0;
-    margin-left: 20px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
 }
 
 .payment-method label {
-    margin-left: 5px;
     font-weight: normal;
     font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.payment-icon {
+    width: 30px;
+    height: 20px;
+    display:inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
 }
 
 .shipping-info textarea {
     height: 150px;
     resize: vertical;
     padding: 15px;
-    width: 90%;
 }
 
 .checkout-box input:focus,
@@ -187,11 +194,11 @@ main {
     outline: none;
     border: none;
     border-radius: 10px;
-    font-size: 20px !important;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 0.8em;
     display: inline-block;
     padding: 0 15px;
+    margin: 0 auto;
 }
 
 #checkout-btn:hover {
