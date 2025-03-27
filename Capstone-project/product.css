@@ -82,6 +82,13 @@ main {
     margin-top: 50px;
 }
 
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+}
+
 .product-details-container {
     padding: 40px 0;
 }
@@ -117,7 +124,7 @@ main {
     text-align: right;
 }
 
-.product-detail-box {
+.product-container {
     display: flex;
     background-color: #fff;
     border-radius: 8px;
@@ -154,15 +161,6 @@ main {
     flex-direction: column;
 }
 
-.product-category {
-    text-align: center;
-    color: #666;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
 .product-content h2 {
     font-size: 28px;
     margin-bottom: 15px;
@@ -170,7 +168,7 @@ main {
     text-align: center;
 }
 
-.product-content h3 {
+.product-category {
     margin-bottom: 10px;
     font-size: 1.3em;
     color: #333;
@@ -181,34 +179,37 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
 #price-text {
-    font-weight: 500;
+    font-weight: bold;
     margin-right: 10px;
+    font-size: 20px;
 }
 
-#current-price {
-    font-size: 1.4em;
+.product-price {
+    font-size: 1.5em;
     font-weight: 600;
     color: #e63946;
 }
 
-.variant-selection {
+.variation-selection {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
     color: #333;
 }
 
-.variant-selection label {
+.variation-selection label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: bold;
     color: #333;
+    font-size: 18px;
 }
 
-.variant-selection select {
+.variation-selection select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -224,10 +225,26 @@ main {
     line-height: 1.6;
 }
 
+.product-quantity {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#quantity-label {
+    margin-right: 15px;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #quantity-controls {
     display: flex;
     align-items: center;
     margin: 20px 0;
+    justify-content: center;
+    max-width: fit-content;
 }
 
 #quantity-controls .quantity-btn, #quantity-controls .quantity {
@@ -303,14 +320,9 @@ main {
     color:#e74c3c;
 }
 
-.items-left {
-    font-size: 0.9em;
-    color: #777;
-}
-
 .shipping-info {
     margin-top: 8px;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #555;
 }
 

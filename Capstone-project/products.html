@@ -33,64 +33,37 @@
             <!--Shop Content-->
             <section class="shop">
                 <h1 class="section-title">Shop Products</h1>
-                <div class="product-content">
-                    <!-- Product 1 -->
-                    <div class="product-box">
-                        <div class="img-box">
-                            <img src="placeholder" alt="">
+                <div class="product-container" id="product-container"></div>
+                    <template class="product-template" id="product-template">
+                        <div class="product-content">
+                            
+                            <!-- Product 1 -->
+                                <div class="product-box">
+                                    <div class="img-box">
+                                        <a class="product-link" href="product.html?product_id=">
+                                            <img src="" alt="">
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="product-category"></div>
+                                    <h2 class="product-title"></h2>
+                                    <div class="product-price"><span>$</span><sup></sup></div>
+                                    <div class="product-details">
+                                        <!-- Stock availability indicator -->
+                                         <div class="product-description"></div>
+                                        <span class="stock-status in-stock"><i class="ri-checkbox-circle-line"></i> In Stock</span>
+                                        <div class="product-quantity"> Stock Quantity : </div>
+                                        <div class="shipping-info">Free shipping over $50</div>
+                                    </div>
+                                    <div class="product-actions">
+                                        <!-- Add to cart button with quantity control -->
+                                        <div class="add-to-cart-container">
+                                            <button class="add-to-cart-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>   
                         </div>
-                        <span class="category-tag">Dog Food</span>
-                        <h2 class="product-title">Premium Dog Food</h2>
-                        <span class="price">$54.99</span>
-                        <div class="product-details">
-                            <!-- Stock availability indicator -->
-                            <span class="stock-status in-stock"><i class="ri-checkbox-circle-line"></i> In Stock</span>
-                            <span class="items-left">25 available</span>
-                            <div class="shipping-info">Free shipping over $50</div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="product.html" class="view-details-btn">View Details</a>
-                            <!-- Add to cart button with quantity control -->
-                            <div class="add-to-cart-container">
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-btn quantity-plus">+</button>
-                                </div>
-                                <button class="add-to-cart-btn">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-box">
-                        <div class="img-box">
-                            <img src="placeholder" alt="">
-                        </div>
-                        <span class="category-tag">Cat Furniture</span>
-                        <h2 class="product-title">Cat Scratching Tree</h2>
-                        <span class="price">$89.99</span>
-                        <div class="product-details">
-                            <!-- Stock availability indicator -->
-                            <span class="stock-status in-stock"><i class="ri-checkbox-circle-line"></i> In Stock</span>
-                            <span class="items-left">12 available</span>
-                            <div class="shipping-info">Free shipping over $50</div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="product.html" class="view-details-btn">View Details</a>
-                            <!-- Add to cart button with quantity control -->
-                            <div class="add-to-cart-container">
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-btn quantity-plus">+</button>
-                                </div>
-                                <button class="add-to-cart-btn">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                    </template>
             </section>
         </main>
         <footer>

@@ -37,29 +37,29 @@
                         <p class="breadcrumb">Home / Products / <span class="product-category-breadcrum">Category</span></p>
                     </div>
 
-                    <div class="product-detail-box">
+                    <a class="product-link" href="product.html?product_id=">
+                        <div class="product-container">
                         <div class="product-detail-img">
                             <img src="" alt="">
                         </div>
                         <div class="product-detail-text">
                             <div class="product-content">
-                                <div class="product-category"></div>
-                                <h2>Premium Dog Food</h2>
-                                <h3>Product Details</h3>
+                                <h2 class="product-title"></h2>
+                                <h3 class="product-category">Product Details</h3>
 
                                 <div class="price-box">
                                     <p id="price-text">Price</p>
-                                    <p id="current-price">$0.00</p>
+                                    <div class="product-price"><span>$</span><sup></div>
                                 </div>
-                                <div class="variant-selection">
-                                    <label for="product-variant">Select Variant</label>
+                                <div class="variation-selection">
+                                    <label for="product-variant">Select Varieties :</label>
                                     <select name="" id="product-variant" class="product-variant"></select>
                                 </div>
 
-                                <p class="details">High-quality premium dog food made with real meat and vegetables. Perfect for dogs of all ages and breeds. Provides complete nutrition for your furry friend's health and vitality.</p>
-
+                                <p class="details"></p>
+                                <div class="product-quantity"> Stock Quantity : </div>
                                 <div class="quantity-controls" id="quantity-controls">
-                                    <span id="quantity-label">Quantity :</span>
+                                    <span id="quantity-label">Quantity : </span>
                                     <button class="quantity-btn quantity-minus">-</button>
                                     <span class="quantity">1</span>
                                     <button class="quantity-btn quantity-plus">+</button>
@@ -70,7 +70,6 @@
                                         <span class="stock-indicator in-stock">
                                             <i class="ri-checkbox-circle-line"></i>In Stock
                                         </span>
-                                        <span class="items-left">15 Items Left</span>
                                     </div>
                                     <p class="shipping-info">Free shipping on orders over $50</p>
                                 </div>
@@ -85,6 +84,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
 
                 
                 </div>

@@ -119,7 +119,7 @@ main {
 
 .checkout-label {
     display: block;
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
@@ -137,10 +137,6 @@ main {
 
 .total-amount input {
     height: 45px;
-}
-
-.payment-method {
-    margin-bottom: 20px;
 }
 
 .radio-option {
