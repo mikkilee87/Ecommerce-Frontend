@@ -122,6 +122,8 @@ main {
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 15px;
+    height: 100%;
+    min-height: 450px;
 }
 
 .product-box:hover {
@@ -131,17 +133,24 @@ main {
     
 .img-box {
     height: 200px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
 } 
   
 .img-box img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 180px;
     object-fit: contain;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .product-category {
@@ -151,8 +160,10 @@ main {
     padding: 4px 10px;
     border-radius: 15px;
     font-size: 12px;
+    margin-top: 5px;
     margin-bottom: 10px;
     align-self: center;
+    clear: both;
 }
 
 .product-title {

@@ -34,7 +34,6 @@ function getData() {
             if (price_str[1].length === 1) price_str[1] += "0";
 
             productElement.querySelector(".product-link").href += item.product_id;
-            productElement.querySelector(".img-box .product-link").href = `/product.html?id=${item.product_id || item.id}`;
             productElement.querySelector(".img-box img").src = item.picture_url || "placeholder.jpg";
             productElement.querySelector(".product-title").textContent = item.name;
             productElement.querySelector(".product-description").textContent = item.description || "";
@@ -60,3 +59,4 @@ function getData() {
 }
 
 getData();
+
