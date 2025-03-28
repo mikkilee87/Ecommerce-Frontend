@@ -19,7 +19,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="products.html" id="products-link">Products</a></li>
+                    <li><a href="products.html">Products</a></li>
                     <li><a href="checkout.html">Cart</a></li>               
                     <li><a href="#">Contact Us</a> </li> 
                 </ul>
@@ -36,55 +36,54 @@
                         <a href="products.html" class="back-btn"><i class="fa fa-long-arrow-left"></i>Back Products</a>
                         <p class="breadcrumb">Home / Products / <span class="product-category-breadcrum">Category</span></p>
                     </div>
+                    <div id="product-detail-container">
+                        <div class="product-container" id="product-container">
+                            <div class="product-detail-img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="product-detail-text">
+                                <div class="product-content">
+                                    <h2 class="product-title"></h2>
+                                    <h3 class="product-category">Product Details</h3>
 
-                    
-                    <div class="product-container" id="product-container">
-                        <div class="product-detail-img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-detail-text">
-                            <div class="product-content">
-                                <h2 class="product-title"></h2>
-                                <h3 class="product-category">Product Details</h3>
-
-                                <div class="price-box">
-                                    <p id="price-text">Price</p>
-                                    <div class="product-price"><span>$</span><sup></sup></div>
-                                </div>
-                                <div class="variation-selection">
-                                    <label for="product-variant">Select Varieties :</label>
-                                    <select name="" id="product-variant" class="product-variant"></select>
-                                </div>
-
-                                <p class="details"></p>
-                                <div class="product-quantity"> Stock Quantity : </div>
-                                <div class="quantity-controls" id="quantity-controls">
-                                    <span id="quantity-label">Quantity : </span>
-                                    <button class="quantity-btn quantity-minus">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="quantity-btn quantity-plus">+</button>
-                                </div>
-
-                                <div class="inventory-info">
-                                    <div class="stock-status-container">
-                                        <span class="stock-indicator in-stock">
-                                            <i class="ri-checkbox-circle-line"></i>In Stock
-                                        </span>
+                                    <div class="price-box">
+                                        <p id="price-text">Price</p>
+                                        <div class="product-price"><span>$</span><sup></sup></div>
                                     </div>
-                                    <p class="shipping-info">Free shipping on orders over $50</p>
-                                </div>
-                                <div class="button-container">
-                                    <button class="details-add-cart-btn" id="details-add-cart-btn" type="button">
-                                        <i class="ri-shopping-cart-2-line"></i>Add to Cart
-                                    </button>
-                                    <button class="buy-now-btn" id="buy-now-btn" type="button">
-                                        <i class="ri-shopping-bag-line"></i>Buy Now
-                                    </button>
+                                    <div class="variation-selection">
+                                        <label for="product-variant">Select Varieties :</label>
+                                        <select name="" id="product-variant" class="product-variant"></select>
+                                    </div>
+
+                                    <p class="details"></p>
+                                    <div class="product-quantity"> Stock Quantity : </div>
+                                    <div class="quantity-controls" id="quantity-controls">
+                                        <span id="quantity-label">Quantity : </span>
+                                        <button class="quantity-btn quantity-minus">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="quantity-btn quantity-plus">+</button>
+                                    </div>
+
+                                    <div class="inventory-info">
+                                        <div class="stock-status-container">
+                                            <span class="stock-indicator in-stock">
+                                                <i class="ri-checkbox-circle-line"></i>In Stock
+                                            </span>
+                                        </div>
+                                        <p class="shipping-info">Free shipping on orders over $50</p>
+                                    </div>
+                                    <div class="button-container">
+                                        <button class="details-add-cart-btn" id="details-add-cart-btn" type="button">
+                                            <i class="ri-shopping-cart-2-line"></i>Add to Cart
+                                        </button>
+                                        <button class="buy-now-btn" id="buy-now-btn" type="button">
+                                            <i class="ri-shopping-bag-line"></i>Buy Now
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div id="product-not-found">
                         <div class="not-found-container">
                             <h2>Product Not Found</h2>
