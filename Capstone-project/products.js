@@ -60,3 +60,13 @@ function getData() {
 
 getData();
 
+document.addEventListener("DOMContentLoaded", function() {     
+    const productsLink = document.getElementById("products-link");      
+    productsLink.addEventListener('click', function(e){         
+        const currentPage = window.location.pathname.split('/').pop();          
+        if (currentPage === "products.html") {             
+            e.preventDefault();             
+            window.location.href = "products.html";         
+        }     
+    }); 
+})
