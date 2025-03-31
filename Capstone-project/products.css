@@ -297,6 +297,19 @@ main {
     text-align: center;
 }
 
+.price-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+#price-text {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 .product-price {
     font-size: 20px;
     font-weight: 600;

@@ -50,6 +50,12 @@ function getSingleProduct() {
         document.querySelector(".product-price span").textContent = "$";
         document.querySelector(".product-price sup").textContent = `${price_str[0]}.${price_str[1]}`;
 
+        if (product.varieties && product.varieties.length > 0) {
+            document.querySelector(".product-price sup").textContent = "0.00";
+        } else {
+            document.querySelector(".product-price sup").textContent = `${price_str[0]}.${price_str[1]}`;
+        }
+        
         if (category) {
             document.querySelector(".product-category").textContent = category.name;
         }
@@ -78,7 +84,7 @@ function getSingleProduct() {
 
                     document.querySelector(".product-price sup").textContent = `${priceParts[0]}.${priceParts[1]}`;    
                 } else {
-                    document.querySelector(".product-price sup").textContent = `${price_str[0]}.${price_str[1]}`;
+                    document.querySelector(".product-price sup").textContent = "0.00";
                 }
             });
         } else {
@@ -115,3 +121,38 @@ function setupQuantityControls() {
 
 setupQuantityControls();
 getSingleProduct();
+
+const addToCartBtn = document.getElementById("details-add-cart-btn");
+const buyNowBtn = document.getElementById("buy-now-btn");
+
+function handlePurchaseButton() {
+    const productId = urlParams.get("product_id");
+
+    const quantity = parseInt(document.querySelector(".quantity").textContent);
+
+    const variantSelect = document.getElementById("product-variant");
+    const selectedVariantId = variantSelect ? variantSelect.value : null;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingItemIndex = cart.findIndex(item =>
+        item.productId === productId && item.variantID === variantId
+    );
+
+    if (existingItemIndex >= 0) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push ({
+            productId: productId,
+            variantId: variantId,
+            quantity: quantity,
+        });
+    }
+}
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+window.location.href = "checkout.html";
+
+addToCartBtn.addEventListener("click", handlePurchaseButton);
+buyNowBtn.addEventListener("click", handlePurchaseButton);

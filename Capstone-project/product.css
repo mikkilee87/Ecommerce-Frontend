@@ -292,10 +292,20 @@ main {
 }
 
 .product-category {
+    display:inline-block;
+    background-color: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    margin-top: 12px;
     margin-bottom: 10px;
     font-size: 1.3em;
-    color: #333;
+    color: #555;
+    align-self: center;
+    clear: both;
     text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1ps 3px rgba(0, 0, 0, 0.1);
 }
 
 .price-box {
@@ -346,6 +356,10 @@ main {
     color: #555;
     margin-bottom: 20px;
     line-height: 1.6;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-quantity {
@@ -365,7 +379,7 @@ main {
 #quantity-controls {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px auto;
     justify-content: center;
     max-width: fit-content;
 }
