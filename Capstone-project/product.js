@@ -34,6 +34,7 @@ function getSingleProduct() {
         fetchData(categoriesApi),
     ])
     .then(([product, categories]) => {
+        console.log("Full product data:", product);
         const category = categories.find(cat => cat.category_id === product.category);
 
         const priceToUse = product.starting_at_price || product.price || 0;
@@ -43,7 +44,7 @@ function getSingleProduct() {
         if (price_str[1].length === 1) price_str[1] += "0";
 
         document.querySelector(".product-title").textContent = product.name;
-        document.querySelector(".product-detail-img img").src = product.image_url || "placeholder.jpg";
+        document.querySelector(".product-detail-img img").src = product.picture_url || "placeholder.jpg";
         document.querySelector(".details").textContent = product.description || "";
         document.querySelector(".product-quantity").textContent = `Stock Quantity: ${product.stock_quantity}`;
         document.querySelector(".product-price span").textContent = "$";
