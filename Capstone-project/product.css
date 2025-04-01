@@ -325,7 +325,14 @@ main {
     font-size: 1.5em;
     font-weight: 600;
     color: #e63946;
+    display: flex;
+    align-items: baseline;
 }
+
+.product-price span {
+    margin-right: 2px;
+}
+
 
 .variation-selection {
     display: block;

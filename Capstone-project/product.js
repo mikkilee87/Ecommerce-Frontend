@@ -58,15 +58,15 @@ function getSingleProduct() {
         document.querySelector(".details").textContent = product.description || "";
         document.querySelector(".product-quantity").textContent = `Stock Quantity: ${product.stock_quantity}`;
         document.querySelector(".product-price span").textContent = "$";
-        document.querySelector(".product-price sup").textContent = `${price_str[0]}.${price_str[1]}`;
+        document.querySelector(".product-price p").textContent = `${price_str[0]}.${price_str[1]}`;
 
         //adds category name if available and sets the default price
         if (product.varieties && product.varieties.length > 0) {
             //if there are variants, start with $0.00
-            document.querySelector(".product-price sup").textContent = "0.00";
+            
         } else {
             //if no variants, show the regular price
-            document.querySelector(".product-price sup").textContent = `${price_str[0]}.${price_str[1]}`;
+            document.querySelector(".product-price p").textContent = `${price_str[0]}.${price_str[1]}`;
         }
         
         if (category) {

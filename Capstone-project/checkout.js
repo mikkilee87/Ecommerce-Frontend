@@ -5,10 +5,10 @@ let cart = [];
 
 //Payment method mapping
 const paymentMethodMapping = {
-    "credit card": "Credit_Card",
-    "debit card": "Debit_Card",
-    "payPal": "Paypal",
-    "cash on delivery": "cod"
+    "credit card": "CREDIT_CARD",
+    "debit card": "DEBIT_CARD",
+    "payPal": "PAYPAL",
+    "cash on delivery": "CASH_ON_DELIVERY"
 };
 
 //Load cart when page loads
@@ -103,9 +103,6 @@ function checkout() {
         total_amount: totalAmount,
         payment_method: paymentMethod,
         shipping_address: shippingAddress,
-        
-        //default status
-        status: "pending",
         
         //cart items
         items: cart.map(item => ({
