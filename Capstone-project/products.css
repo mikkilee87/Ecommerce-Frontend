@@ -300,7 +300,7 @@ main {
 .price-box {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
     justify-content: center;
 }
 
@@ -314,7 +314,6 @@ main {
     font-size: 20px;
     font-weight: 600;
     color: #e63946;
-    margin-bottom: 4px;
     text-align: center;
     display: block;
 }

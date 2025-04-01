@@ -1,3 +1,4 @@
+///get reference to the html template element for the product card
 const template = document.getElementById("product-template")
 const container = document.getElementById("product-container")
 const productsApi = "http://3.136.18.203:8000/products/";
@@ -15,6 +16,7 @@ function fetchData(url) {
 
 function getData() {
     Promise.all([
+        //fetches both product and categories data in parallel
         fetchData(productsApi),
         fetchData(categoriesApi),
     ])
@@ -25,6 +27,7 @@ function getData() {
 
             const category = categories.find(cat => cat.category_id === item.category);
 
+            //clones the product template
             const productElement = template.content.cloneNode(true);
 
             const priceToUse = item.starting_at_price || item.price || 0;
@@ -33,6 +36,7 @@ function getData() {
             if (price_str.length === 1) price_str.push("00");
             if (price_str[1].length === 1) price_str[1] += "0";
 
+            //set the product details in the template
             productElement.querySelector(".product-link").href += item.product_id;
             productElement.querySelector(".img-box img").src = item.picture_url || "placeholder.jpg";
             productElement.querySelector(".product-title").textContent = item.name;
