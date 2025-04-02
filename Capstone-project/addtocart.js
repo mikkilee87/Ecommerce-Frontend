@@ -219,6 +219,9 @@ function addProductToCartPanel(product, quantity, variantId) {
     //update cart count and toal price
     updateCartCount(1);
     updateTotalPrice();
+
+    //show modal with item added
+    showAddToCartModal(product, quantity, totalPrice,variantInfo);
 }
 
 //for add-cart button on product page
@@ -248,6 +251,7 @@ function setupListingPageButtons() {
     }
 }
 
+//setup for product detail page purchase buttons
 function setupProductDetailButtons(product) {
     const addToCartBtn = document.getElementById("details-add-cart-btn");
     const buyNowButton = document.getElementById("buy-now-btn");
@@ -256,12 +260,14 @@ function setupProductDetailButtons(product) {
         addToCartBtn.addEventListener("click", () => {
             const quantity = parseInt(document.querySelector(".quantity").textContent);
 
+            //get variant info if available
             const variantSelect = document.getElementById("product-variant");
             let variantId = null;
 
             if (variantSelect && variantSelect.value) {
                 variantId = variantSelect.value;
             }
+            //add to cart panel
             addProductToCartPanel(product, quantity, variantId);
         });
     }
@@ -277,17 +283,19 @@ function setupProductDetailButtons(product) {
                 variantId = variantSelect.value;
             }
             addProductToCartPanel(product, quantity, variantId);
-
+            //redirect to checkout
             window.location.href = "checkout.html"
         });
     }
 }
 
+//intialize on page load
 document.addEventListener("DOMContentLoaded", () => {
     initializeCart();
     setupListingPageButtons();
 });
 
+//export functions for use in other files
 window.cartFunctions = {
     addProductToCartPanel,
     updateCartCount,
