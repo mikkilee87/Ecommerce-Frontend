@@ -8,9 +8,10 @@ const modalContainer = document.getElementById("modal-container");
 
 //Track cart item count
 let cartItemCount = 0;
+let totalPrice = 0.00;
 
 //function to show modal when item is added to cart
-function showAddToCartModal (product, quantity, totalPrice, variantInfo) {
+function showAddToCartModal (product, quantity, variantInfo) {
 
     //get modal elements
     const productNameElement = document.getElementById("modal-product-name");
@@ -24,7 +25,7 @@ function showAddToCartModal (product, quantity, totalPrice, variantInfo) {
     const variantText = variantInfo ? `-${variantInfo.name}` : '';
     productNameElement.textContent = `${product.name}${variantText}`;
     quantityElement.textContent = quantity;
-    priceElement.textContent = `$${totalPrice.toFixed(2)}`;
+    priceElement.textContent = `$${totalPrice}`;
 
     //show the modal
     modalContainer.classList.add("show");
@@ -47,6 +48,55 @@ function showAddToCartModal (product, quantity, totalPrice, variantInfo) {
         closeModal();
         cart.classList.add("active");
     });
+}
+
+//function to show modal when a variety hasn't been selected
+function showErrorModal (errorMessage) {
+    //get modal elements
+    const productNameElement = document.getElementById("modal-product-name");
+    const quantityElement = document.getElementById("modal-quantity");
+    const priceElement = document.getElementById("modal-price");
+    const closeBtn = document.getElementById("modal-close");
+    const continueShoppingBtn = document.getElementById("continue-shopping");
+    const viewCartBtn = document.getElementById("view-cart");
+
+    const modalTitle = document.querySelector("#cart-modal h2");
+    modalTitle.textContent = "Error";
+
+    //hide unnecessary Elements
+    quantityElement.parentElement.style.display = "none";
+    priceElement.parentElement.style.display = "none";
+    viewCartBtn.style.display = "none";
+
+    //set error message
+    productNameElement.textContent = errorMessage;
+
+    //rename continue shopping button
+    continueShoppingBtn.textContent = "OK";
+
+    //show modal
+    modalContainer.classList.add("show");
+
+    const closeModal = function () {
+        //resets modal to original state
+        modalTitle.textContent = "Item added to cart!";
+        quantityElement.parentElement.style.display = "block";
+        priceElement.parentElement.style.display = "block";
+        viewCartBtn.style.display = "block";
+        continueShoppingBtn.textContent = "Continue Shopping";
+
+        modalContainer.classList.remove("show");
+
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modalContainer.addEventListener("click", function(event) {
+        if (event.target === modalContainer) {
+            closeModal();
+        }
+    });
+    continueShoppingBtn.addEventListener("click", closeModal);
 }
 
 //cart functionality
@@ -104,16 +154,46 @@ function updateTotalPrice() {
         total += price * quantity;
     });
     totalPriceElement.textContent = `$${total.toFixed(2)}`; 
+    totalPrice = total.toFixed(2);
 };
 
 //function to add product to cart panel without the use of html
-function addProductToCartPanel(product, quantity, variantId) {
-    const variantInfo = variantId && product.varieties ?
-    product.varieties.find(v => v.id === variantId) : null;
+function addProductToCartPanel(product, quantity, variantPrice) {
+    const variantInfo = variantPrice && product.varieties ?
+    product.varieties.find(v => v.price === variantPrice) : null;
 
     const productTitle = product.name + (variantInfo ? `- ${variantInfo.name}`: '');
     const productPrice = variantInfo ? variantInfo.price : product.price;
     const productImgSrc = product.picture_url || 'placeholder.jpg';
+
+    //creates a cart item and saves to localStorage
+    const cartItem = {
+        id: product.id || Math.random().toString(36).substr(2,9),
+        name: productTitle,
+        price: productPrice,
+        quantity: quantity,
+        image: productImgSrc
+    }
+
+    //gets existing cart from localStorage
+
+    let storedCart = [];
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        storedCart = JSON.parse(savedCart);
+    }
+
+    //check if product is already in cart
+    const existingItemIndex = storedCart.findIndex(item => item.name === productTitle);
+
+    if (existingItemIndex !== -1) {
+        storedCart[existingItemIndex].quantity += quantity;
+    } else {
+        storedCart.push(cartItem);
+    }
+
+    //save cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(storedCart));
     
     //check if product is already in cart
     const cartItems = cartContent.querySelectorAll(".cart-product-title");
@@ -198,6 +278,12 @@ function addProductToCartPanel(product, quantity, variantId) {
         cartBox.remove();
         updateCartCount(-1);
         updateTotalPrice();
+
+        //update localStorage when removing item
+        const productTitle = cartBox.querySelector(".cart-product-title").textContent;
+        let storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        storedCart = storedCart.filter(item => item.name !== productTitle);
+        localStorage.setItem("cart", JSON.stringify(storedCart));
     });
 
     quantityDiv.addEventListener("click", event => {
@@ -214,6 +300,14 @@ function addProductToCartPanel(product, quantity, variantId) {
         }
         numberSpan.textContent = qty;
         updateTotalPrice();
+
+        const productTitle = cartBox.querySelector(".cart-product-title").textContent;
+        let storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const itemIndex = storedCart.findIndex(item => item.name === productTitle);
+        if (itemIndex !== -1) {
+            storedCart[itemIndex].quantity = qty;
+            localStorage.setItem("cart", JSON.stringify(storedCart));
+        }
     });
 
     //update cart count and toal price
@@ -221,7 +315,7 @@ function addProductToCartPanel(product, quantity, variantId) {
     updateTotalPrice();
 
     //show modal with item added
-    showAddToCartModal(product, quantity, totalPrice,variantInfo);
+    showAddToCartModal(product, quantity,variantInfo);
 }
 
 //for add-cart button on product page
@@ -262,6 +356,17 @@ function setupProductDetailButtons(product) {
 
             //get variant info if available
             const variantSelect = document.getElementById("product-variant");
+
+            //checks if variants exist and if user has selected one
+            if (product.varieties && product.varieties.length > 0 &&
+                (!variantSelect.value || variantSelect.value === "")) {
+                //show error modal
+                showErrorModal("Please select a variety before adding to cart");
+                return;
+            }
+
+
+            console.log(variantSelect);
             let variantId = null;
 
             if (variantSelect && variantSelect.value) {
@@ -277,6 +382,14 @@ function setupProductDetailButtons(product) {
             const quantity = parseInt(document.querySelector(".quantity").textContent);
 
             const variantSelect = document.getElementById("product-variant");
+            //checks if variants exist and if user has selected one
+            if (product.varieties && product.varieties.length > 0 &&
+                (!variantSelect.value || variantSelect.value === "")) {
+                //show error modal
+                showErrorModal("Please select a variety before adding to cart");
+                return;
+            }
+
             let variantId = null;
 
             if (variantSelect && variantSelect.value) {

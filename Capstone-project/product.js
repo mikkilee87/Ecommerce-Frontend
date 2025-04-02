@@ -83,7 +83,8 @@ function getSingleProduct() {
             //adds each variety as an option
             product.varieties.forEach(variety => {
                 const option = document.createElement("option");
-                option.value = variety.id;
+                option.value = variety.price;
+                console.log(variety);
                 option.textContent = variety.name;
                 option.dataset.price = variety.price;
                 variantSelect.appendChild(option);

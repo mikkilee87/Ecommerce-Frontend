@@ -28,6 +28,7 @@ function loadCart() {
     } else {
         //If no cart exists, creates a redirect message
         alert('Your cart is empty. Please add items before checkout.');
+        window.location.href = "products.html";
         
     }
 }
