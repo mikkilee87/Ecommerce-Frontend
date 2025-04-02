@@ -63,7 +63,7 @@ function getSingleProduct() {
         //adds category name if available and sets the default price
         if (product.varieties && product.varieties.length > 0) {
             //if there are variants, start with $0.00
-            
+            document.querySelector(".product-price p").textContent = "0.00";
         } else {
             //if no variants, show the regular price
             document.querySelector(".product-price p").textContent = `${price_str[0]}.${price_str[1]}`;
@@ -99,9 +99,9 @@ function getSingleProduct() {
                     if (priceParts.length === 1) priceParts.push("00");
                     if (priceParts[1].length === 1) priceParts[1] += "0";
 
-                    document.querySelector(".product-price sup").textContent = `${priceParts[0]}.${priceParts[1]}`;    
+                    document.querySelector(".product-price p").textContent = `${priceParts[0]}.${priceParts[1]}`;    
                 } else {
-                    document.querySelector(".product-price sup").textContent = "0.00";
+                    document.querySelector(".product-price p").textContent = "0.00";
                 }
             });
         } else {
@@ -113,6 +113,11 @@ function getSingleProduct() {
 
         //updates page title
         document.title = `${product.name} - Your Store Name`;
+
+        //sets up purchase buttons after product is loaded
+        if (window.cartFunctions && window.cartFunctions.setupProductDetailButtons) {
+            window.cartFunctions.setupProductDetailButtons(product);
+        }
     })
     .catch(error => {
         console.error("Error loading product:", error);
@@ -144,47 +149,3 @@ function setupQuantityControls() {
 //Intialize
 setupQuantityControls();
 getSingleProduct();
-
-//Get references to both buttons
-const addToCartBtn = document.getElementById("details-add-cart-btn");
-const buyNowBtn = document.getElementById("buy-now-btn");
-
-//creates a single function to handle both buttons, otherwise can create separate functions for add to cart and buy now buttons
-function handlePurchaseButton() {
-    const productId = urlParams.get("product_id");
-
-    const quantity = parseInt(document.querySelector(".quantity").textContent);
-
-    const variantSelect = document.getElementById("product-variant");
-    const selectedVariantId = variantSelect ? variantSelect.value : null;
-
-    //adds product to cart
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    //checks if product is already in cart
-    const existingItemIndex = cart.findIndex(item =>
-        item.productId === productId && item.variantID === variantId
-    );
-
-    if (existingItemIndex >= 0) {
-        //Updates quantity if product already exists
-        cart[existingItemIndex].quantity += quantity;
-    } else {
-        cart.push ({
-            //add new item to cart
-            productId: productId,
-            variantId: variantId,
-            quantity: quantity,
-        });
-    }
-}
-
-//save cart back to localStorage
-localStorage.setItem("cart", JSON.stringify(cart));
-
-//redirects to checkout page
-window.location.href = "checkout.html";
-
-//adds same event listener to both buttons
-addToCartBtn.addEventListener("click", handlePurchaseButton);
-buyNowBtn.addEventListener("click", handlePurchaseButton);

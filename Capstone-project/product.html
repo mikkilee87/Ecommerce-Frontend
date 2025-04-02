@@ -123,6 +123,22 @@
                 </div>
             </section>
         </main>
+        <div id="modal-container" class="modal-container">
+            <div id="cart-modal" class="modal">
+                <button id="modal-close" class="close-icon" aria-label="Close">&times;</button>
+                <h2>Item added to cart!</h2>
+                <div class="modal-product-details">
+                    <p class="" id="modal-product-name"></p>
+                    <p>Quantity: <span id="modal-quantity"></span></p>
+                    <p>Price: <span id="modal-price"></span></p>
+                </div>
+                <div class="modal-actions">
+                    <button class="continue-shopping" id="continue-shopping">Continue Shopping</button>
+                    <button class="view-cart" id="view-cart">View Cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
         <footer>
             <div class="social-icon-container">
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -133,6 +149,7 @@
             </div>
             <p>&copy;2025 Purrfect Pets. All rights reserved</p>
         </footer>
+        <script src="addtocart.js"></script>
         <script src="product.js"></script>
     </body>
 </html>
