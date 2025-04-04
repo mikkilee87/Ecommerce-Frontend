@@ -150,9 +150,25 @@ function checkout() {
         
         //Clears the cart
         localStorage.removeItem("cart");
+        cart = [];
         
        //Shows confirmation message
         alert(`Order placed successfully! Your order ID is: ${data.id}`);
+
+        document.getElementById("query").value = "";
+        document.getElementById("total-amount").value = "$0.00";
+
+        const paymentRadios = document.getElementsByName("payment");
+        for (let i = 0; i < paymentRadios.length; i++) {
+            paymentRadios[i].checked = false;
+        }
+
+        if (paymentRadios.length > 0) {
+            paymentRadios[0].checked = true;
+        }
+
+        checkoutBtn.innerHTML = originalBtnText;
+        checkoutBtn.disabled = false;
               
     })
     //No redirect - User stays on the checkout page

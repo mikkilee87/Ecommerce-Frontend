@@ -105,6 +105,113 @@ function initializeCart () {
     cartIcon.addEventListener("click", () => cart.classList.add("active"));
     cartClose.addEventListener("click", () => cart.classList.remove("active"));
 
+    //load cart items from localStorage
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        const cartItems = JSON.parse(savedCart);
+        cartItems.forEach(item => {
+            //create cart box element for each saved item
+            const cartBox = document.createElement("div");
+            cartBox.classList.add("cart-box");
+
+            //create and add image element
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.classList.add("cart-img");
+            cartBox.appendChild(img);
+
+            //create detail container
+            const detailDiv = document.createElement("div");
+            detailDiv.classList.add("cart-detail");
+
+            //create and add product title
+            const titleElement = document.createElement("h2");
+            titleElement.classList.add("cart-product-title");
+            titleElement.textContent = item.name;
+            detailDiv.appendChild(titleElement);
+
+            //create and add price
+            const priceElement = document.createElement("span");
+            priceElement.classList.add("cart-price");
+            priceElement.textContent = `$${item.price}`;
+            detailDiv.appendChild(priceElement);
+
+            //create quantity container
+            const quantityDiv = document.createElement("div");
+            quantityDiv.classList.add("cart-quantity");
+
+            //create decrement button
+            const decrementBtn = document.createElement("button");
+            decrementBtn.id = "decrement";
+            decrementBtn.textContent = "-";
+            decrementBtn.style.color = item.quantity > 1 ? "#333" : "#999";
+            quantityDiv.appendChild(decrementBtn);
+
+            //create quantity number
+            const numberSpan = document.createElement("span");
+            numberSpan.classList.add("number");
+            numberSpan.textContent = item.quantity;
+            quantityDiv.appendChild(numberSpan);
+
+            //create increment button
+            const incrementBtn = document.createElement("button");
+            incrementBtn.id = "increment";
+            incrementBtn.textContent = "+";
+            quantityDiv.appendChild(incrementBtn);
+
+            //add qty div to details
+            detailDiv.appendChild(quantityDiv);
+
+            //add detail div to cartBox
+            cartBox.appendChild(detailDiv);
+
+            //create remove icon
+            const removeIcon = document.createElement("i");
+            removeIcon.classList.add("ri-delete-bin-line", "cart-remove");
+            cartBox.appendChild(removeIcon);
+
+            //add event listners for remove button
+            removeIcon.addEventListener("click", () => {
+                cartBox.remove();
+                updateCartCount(-1);
+                updateTotalPrice();
+
+                //update localStorage when removing item
+                const productTitle = cartBox.querySelector(".cart-product-title").textContent;
+                let storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+                storedCart = storedCart.filter(item => item.name !== productTitle);
+                localStorage.setItem("cart", JSON.stringify(storedCart));
+            });
+
+            //add event listeners for qty buttons
+            quantityDiv.addEventListener("click", event => {
+                let qty = parseInt(numberSpan.textContent);
+
+                if (event.target.id === "decrement" && qty > 1) {
+                    qty--;
+                    if (qty === 1) {
+                        decrementBtn.style.color = "#999";
+                    }
+                } else if (event.target.id === "increment") {
+                    qty++;
+                    decrementBtn.style.color = "#333";
+                }
+                numberSpan.textContent = qty;
+                updateTotalPrice();
+
+                const productTitle = cartBox.querySelector(".cart-product-title").textContent;
+                let storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+                const itemIndex = storedCart.findIndex(item => item.name === productTitle);
+                if (itemIndex !== -1) {
+                    storedCart[itemIndex].quantity = qty;
+                    localStorage.setItem("cart", JSON.stringify(storedCart));
+                }
+            });
+            //add cart box to cart content
+            cartContent.appendChild(cartBox);
+        });
+    }
+
     //buy now button in cart
     const buyNowButton = document.querySelector(".btn-buy");
     if (buyNowButton) {
