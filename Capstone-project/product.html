@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Detail Page</title>
+        <link rel="stylesheet" href="product.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="Images and Logos/nature-pet-store.jpg" alt="pet store logo">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="checkout.html">Cart</a></li>               
+                    <li><a href="#">Contact Us</a> </li> 
+                </ul>
+            </nav>
+            <div id="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-item-count"></span>
+            </div>
+        </header>
+        <main>
+            <!--Cart details-->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content">
+                <!--   <div class="cart-box">
+                        <img src="" class="cart-img">
+                        <div class="cart-detail">
+                            <h2 class="cart-product-title"></h2>
+                            <span class="cart-price">$</span><sup></sup>
+                            <div class="cart-quantity">
+                                <button id="decrement">-</button>
+                                <span class="number">1</span>
+                                <button id="increment">+</button>
+                            </div>
+                        </div>
+                        <i class="ri-delete-bin-line cart-remove"></i>
+                    </div> -->
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price"></div>
+                </div>
+                <button class="btn-buy">Buy Now</button>
+                <i class="ri-close-line" id="cart-close"></i>
+            </div>
+
+            <!--Product Details-->
+            <section class="product-details-container">
+                <div class="wrapper">
+                    <div class="header-nagivation">
+                        <a href="products.html" class="back-btn"><i class="fa fa-long-arrow-left"></i>Back Products</a>
+                        <p class="breadcrumb">Home / Products / <span class="product-category-breadcrum">Category</span></p>
+                    </div>
+                    <div id="product-detail-container">
+                        <div class="product-container" id="product-container">
+                            <div class="product-detail-img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="product-detail-text">
+                                <div class="product-content">
+                                    <h2 class="product-title"></h2>
+                                    <h3 class="product-category">Product Details</h3>
+
+                                    <div class="price-box">
+                                        <p id="price-text">Price</p>
+                                        <div class="product-price"><span>$</span><p></p></div>
+                                    </div>
+                                    <div class="variation-selection">
+                                        <label for="product-variant">Select Varieties :</label>
+                                        <select id="product-variant" class="product-variant"></select>
+                                    </div>
+
+                                    <p class="details"></p>
+                                    <div class="product-quantity"> Stock Quantity : </div>
+                                    <div class="quantity-controls" id="quantity-controls">
+                                        <span id="quantity-label">Quantity : </span>
+                                        <button class="quantity-btn quantity-minus">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="quantity-btn quantity-plus">+</button>
+                                    </div>
+
+                                    <div class="inventory-info">
+                                        <div class="stock-status-container">
+                                            <span class="stock-indicator in-stock">
+                                                <i class="ri-checkbox-circle-line"></i>In Stock
+                                            </span>
+                                        </div>
+                                        <p class="shipping-info">Free shipping on orders over $50</p>
+                                    </div>
+                                    <div class="button-container">
+                                        <button class="details-add-cart-btn" id="details-add-cart-btn" type="button">
+                                            <i class="ri-shopping-cart-2-line"></i>Add to Cart
+                                        </button>
+                                        <button class="buy-now-btn" id="buy-now-btn" type="button">
+                                            <i class="ri-shopping-bag-line"></i>Buy Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product-not-found">
+                        <div class="not-found-container">
+                            <h2>Product Not Found</h2>
+                            <p>Sorry, the product you're looking for doesn't exist or couldn't be loaded.</p>
+                            <a href="products.html" class="back-button">Back to Products</a>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </section>
+        </main>
+        <div id="modal-container" class="modal-container">
+            <div id="cart-modal" class="modal-content">
+                <button id="modal-close" class="close-icon" aria-label="Close">&times;</button>
+                <h2>Item added to cart !</h2>
+                <div class="modal-product-details">
+                    <p class="" id="modal-product-name"></p>
+                    <p>Quantity: <span id="modal-quantity"></span></p>
+                    <p>Price: <span id="modal-price"></span></p>
+                </div>
+                <div class="modal-actions">
+                    <button class="continue-shopping" id="continue-shopping">Continue Shopping</button>
+                    <button class="view-cart" id="view-cart">View Cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer>
+            <div class="social-icon-container">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy;2025 Purrfect Pets. All rights reserved</p>
+        </footer>
+        <script src="addtocart.js"></script>
+        <script src="product.js"></script>
+    </body>
+</html>

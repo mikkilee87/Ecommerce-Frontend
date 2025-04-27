@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout Page</title>
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="Images and Logos/nature-pet-store.jpg" alt="pet store logo">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="checkout.html">Cart</a></li>               
+                    <li><a href="#">Contact Us</a> </li> 
+                </ul>
+            </nav>
+            <div id="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-item-count"></span>
+            </div>
+        </header>
+        <main>
+            <!--Cart details-->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content">
+                <!--   <div class="cart-box">
+                        <img src="" class="cart-img">
+                        <div class="cart-detail">
+                            <h2 class="cart-product-title"></h2>
+                            <span class="cart-price">$</span><sup></sup>
+                            <div class="cart-quantity">
+                                <button id="decrement">-</button>
+                                <span class="number">1</span>
+                                <button id="increment">+</button>
+                            </div>
+                        </div>
+                        <i class="ri-delete-bin-line cart-remove"></i>
+                    </div> -->
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <button class="btn-buy">Buy Now</button>
+                <i class="ri-close-line" id="cart-close"></i>
+            </div>
+            
+            <section class="checkout">
+                <h1 class="section-title">Checkout</h1>
+                <div class="checkout-content">
+                    <form class="checkout-box" action="#">
+                        <div class="total-amount">
+                            <label class="checkout-label">
+                                Total Amount :
+                                <input type="text" name="total amount" id="total-amount" placeholder="Enter amount">
+                            </label>
+                            </div>
+                        <div class="payment-method">
+                            <label class="checkout-label"> <strong>Payment Method : </strong></label>
+
+                            <div class="radio-option">
+                                <input type="radio" id="crecit-card" name="payment" value="credit card">
+                                <label for="creditcard">Credit Card</label>
+                                <img src="Images and Logos/amex_82052.png" alt="creditcard" class="payment-icon">
+                            </div> 
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="debit-card" name="payment" value="debit card">
+                                <label for="debitcard">Debit Card</label>
+                                <img src="Images and Logos/visa.png" alt="debitcard" class="payment-icon">
+                            </div>
+
+                            <div class="radio-option">
+                                <input type="radio" id="payPal" name="payment" value="payPal">
+                                <label for="payPal">Paypal</label>
+                                <img src="Images and Logos/paypal_payment_method_card_icon_142733.png" alt="payPal" class="payment-icon">
+                            </div>
+
+                            <div class="radio-option">
+                                <input type="radio" id="cod" name="payment" value="cash on delivery">
+                                <label for="cash on delivery">Cash on delivery</label>
+                                <img src="Images and Logos/cash-on-delivery-solid-icons-simple-stock-illustration-stock-vector.jpg" alt="cash on delivery" class="payment-icon">
+                            </div>
+                            
+                        </div>
+                        <div class="shipping-info">
+                            <label class="checkout-label">
+                                Shipping Address :
+                                <textarea name="query" id="query" cols="30" rows="3"
+                                placeholder="Shipping address here"></textarea>
+                            </label>
+                        </div>
+                        <div class="button-container">
+                            <button class="checkout-btn" id="checkout-btn" type="button">
+                                <i class="ri-shopping-bag-line"></i>Checkout
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="social-icon-container">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy;2025 Purrfect Pets. All rights reserved</p>
+        </footer>
+        <script src="checkout.js"></script>
+    </body>
+</html>
